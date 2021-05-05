@@ -2,6 +2,22 @@ from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
+
+user_meals = db.Table(
+    "user_meals",
+    db.Column(
+        "user_id",
+        db.Integer,
+        db.ForeignKey("users.id"),
+        primary_key=True
+    ),
+    db.Column(
+        "meal_id",
+        db.Integer,
+        db.ForeignKey("meals.id"),
+        primary_key=True
+    )
+)
 class User(db.Model, UserMixin):
   __tablename__ = 'users'
 
@@ -44,9 +60,9 @@ class Meal(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(100), nullable=False)
   cuisine = db.Column(db.String(50), nullable=False)
-  recipe = db.Column(db.Text(), nullable=False)
+  recipe = db.Column(db.Text(), nullable=True)
 
-  mealIngredients = db.relationship("MealIngredient", back_populates="meal")
+  meal_ingredients = db.relationship("MealIngredient", back_populates="meal")
 
   users = db.relationship(
     "User",
@@ -62,21 +78,7 @@ class Meal(db.Model):
       "recipe": self.recipe
     }
 
-user_meals = db.Table(
-    "user_meals",
-    db.Column(
-        "user_id",
-        db.Integer,
-        db.ForeignKey("users.id"),
-        primary_key=True
-    ),
-    db.Column(
-        "meal_id",
-        db.Integer,
-        db.ForeignKey("meals.id"),
-        primary_key=True
-    )
-)
+
 
 
 class Ingredient(db.Model):
@@ -87,7 +89,8 @@ class Ingredient(db.Model):
   type = db.Column(db.String(50), nullable=False)
   measurementUnit = db.Column(db.String(50), nullable=False)
 
-  mealIngredients = db.relationship("MealIngredient", back_populates="ingredient")
+  meal_ingredients = db.relationship("MealIngredient", back_populates="ingredient")
+  
   def to_dict(self):
     return {
         "id": self.id,
@@ -98,19 +101,19 @@ class Ingredient(db.Model):
 
 
 class MealIngredient(db.Model):
-    __tablename__ = "mealIngredients"
+    __tablename__ = "meal_ingredients"
     __table_args__ = (
-        db.UniqueConstraint('mealId', 'ingredientId', name='ingredient_once_per_meal'),
+        db.UniqueConstraint('meal_id', 'ingredient_id', name='ingredient_once_per_meal'),
     )
 
     id = db.Column(db.Integer, primary_key=True)
-    mealId = db.Column(db.Integer, db.ForeignKey('meals.id'), nullable=False)
-    ingredientId = db.Column(db.Integer, db.ForeignKey('ingredients.id'), nullable=False)
-    ingredientQuantity = db.Column(db.Float, nullable=False)
+    meal_id = db.Column(db.Integer, db.ForeignKey('meals.id'), nullable=False)
+    ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'), nullable=False)
+    ingredient_quantity = db.Column(db.Float, nullable=False)
 
     ingredient = db.relationship(
-        "Ingredient", back_populates="mealIngredients")
-    meal = db.relationship("Meal", back_populates="mealIngredients")
+        "Ingredient", back_populates="meal_ingredients")
+    meal = db.relationship("Meal", back_populates="meal_ingredients")
     
 
     def to_dict(self):
