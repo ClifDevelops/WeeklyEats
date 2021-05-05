@@ -46,17 +46,18 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=100), nullable=False),
     sa.Column('type', sa.String(length=50), nullable=False),
-    sa.Column('measurementUnit', sa.String(length=50), nullable=False)
+    sa.Column('measurementUnit', sa.String(length=50), nullable=False),
+    sa.PrimaryKeyConstraint('id'),
     )
     op.create_table('meal_ingredients',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('mealId', sa.Integer(), nullable=False),
-    sa.Column('ingredientId', sa.Integer(), nullable=False),
+    sa.Column('meal_id', sa.Integer(), nullable=False),
+    sa.Column('ingredient_id', sa.Integer(), nullable=False),
     sa.Column('ingredient_quantity', sa.Float(), nullable=False),
     sa.ForeignKeyConstraint(['meal_id'], ['meals.id'], ),
     sa.ForeignKeyConstraint(['ingredient_id'], ['ingredients.id'], ),
     sa.PrimaryKeyConstraint('id'),
-        sa.UniqueConstraint('meal_id', 'ingredient_id',
+    sa.UniqueConstraint('meal_id', 'ingredient_id',
                             name='ingredient_once_per_meal')
     )
 

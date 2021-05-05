@@ -119,10 +119,9 @@ class MealIngredient(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "userId": self.userId,
-            "coinId": self.coinId,
-            "quantity": self.quantity,
-            "averagePrice": self.averagePrice
+            "meal_id": self.meal_id,
+            "ingredient_id": self.ingredient_id,
+            "ingredient_quantity": self.ingredient_quantity
         }
 
 # class UserMeal(db.Model):
