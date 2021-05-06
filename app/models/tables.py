@@ -3,21 +3,21 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
 
-user_meals = db.Table(
-    "user_meals",
-    db.Column(
-        "user_id",
-        db.Integer,
-        db.ForeignKey("users.id"),
-        primary_key=True
-    ),
-    db.Column(
-        "meal_id",
-        db.Integer,
-        db.ForeignKey("meals.id"),
-        primary_key=True
-    )
-)
+# user_meals = db.Table(
+#     "user_meals",
+#     db.Column(
+#         "user_id",
+#         db.Integer,
+#         db.ForeignKey("users.id"),
+#         primary_key=True
+#     ),
+#     db.Column(
+#         "meal_id",
+#         db.Integer,
+#         db.ForeignKey("meals.id"),
+#         primary_key=True
+#     )
+# )
 class User(db.Model, UserMixin):
   __tablename__ = 'users'
 
@@ -26,11 +26,13 @@ class User(db.Model, UserMixin):
   email = db.Column(db.String(255), nullable = False, unique = True)
   hashed_password = db.Column(db.String(255), nullable = False)
 
-  meals = db.relationship(
-    "Meal",
-    secondary=user_meals,
-    back_populates="users"
-  )
+  user_meals = db.relationship("UserMeal", back_populates="user")
+
+  # meals = db.relationship(
+  #   "Meal",
+  #   secondary=user_meals,
+  #   back_populates="users"
+  # )
 
   @property
   def password(self):
@@ -63,12 +65,13 @@ class Meal(db.Model):
   recipe = db.Column(db.Text(), nullable=True)
 
   meal_ingredients = db.relationship("MealIngredient", back_populates="meal")
+  user_meals = db.relationship("UserMeal", back_populates="meal")
 
-  users = db.relationship(
-    "User",
-    secondary=user_meals,
-    back_populates="meals"
-  )
+  # users = db.relationship(
+  #   "User",
+  #   secondary=user_meals,
+  #   back_populates="meals"
+  # )
 
   def to_dict(self):
     return {
@@ -124,15 +127,17 @@ class MealIngredient(db.Model):
             "ingredient_quantity": self.ingredient_quantity
         }
 
-# class UserMeal(db.Model):
-#   __tablename__='userMeals'
-#   __table_args__ = (
-#     db.UniqueConstraint('userId', 'mealId', name='unique_userMeal')
-#   )
+class UserMeal(db.Model):
+  __tablename__='user_meals'
+  __table_args__ = (
+    db.UniqueConstraint('user_id', 'meal_id', name='unique_user_meal'),
+  )
 
-#   id = db.Column(db.Integer, primary_key=True)
-#   userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-#   mealId = db.Column(db.Integer, db.ForeignKey('meals.id'), nullable=False)
+  id = db.Column(db.Integer, primary_key=True)
+  user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+  meal_id = db.Column(db.Integer, db.ForeignKey('meals.id'), nullable=False)
 
+  user = db.relationship("User", back_populates='user_meals')
+  meal = db.relationship("Meal", back_populates='user_meals')
 
 

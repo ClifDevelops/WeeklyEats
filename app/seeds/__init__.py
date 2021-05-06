@@ -1,6 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
-from .ingredients import seed_ingredients, undo_ingredients
+from .ingredients import seed_ingredients, undo_ingredients, seed_meal_ingredients, undo_meal_ingredients
+from .meals import seed_meals, seed_user_meals, undo_meals, undo_user_meals
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -11,6 +12,9 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users()
     seed_ingredients()
+    seed_meals()
+    seed_user_meals()
+    seed_meal_ingredients()
 
     # Add other seed functions here
 
@@ -19,4 +23,7 @@ def seed():
 def undo():
     undo_users()
     undo_ingredients()
+    undo_meals()
+    undo_user_meals()
+    undo_meal_ingredients()
     # Add other undo functions here
