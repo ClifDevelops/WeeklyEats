@@ -35,12 +35,12 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user_meals',
+    sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('meal_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['users.id']),
     sa.ForeignKeyConstraint(['meal_id'], ['meals.id']),
-    sa.PrimaryKeyConstraint('user_id'),
-    sa.PrimaryKeyConstraint('meal_id'),
+    sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('user_id', 'meal_id',
                             name='meal_once_per_user')
     )
