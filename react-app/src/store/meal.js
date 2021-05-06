@@ -18,7 +18,7 @@ export const addToMeals = (meal) => async (dispatch) => {
     console.log(response2)
 }
 
-const initialState = {}
+const initialState = {meal: null}
 export default function meal(state = initialState, action) {
     switch (action.type) {
         case SET_MEAL:

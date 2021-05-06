@@ -18,7 +18,7 @@ export const addToIngredients = (ingredient) => async (dispatch) => {
     console.log(response2)
 }
 
-const initialState = {};
+const initialState = {ingredient: null};
 export default function ingredient(state = initialState, action) {
     switch (action.type) {
         case SET_INGREDIENT:

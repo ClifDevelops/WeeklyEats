@@ -6,6 +6,7 @@ import SignUpForm from "./components/auth/SignUpForm";
 import IngredientForm from "./components/IngredientForm"
 import MealForm from "./components/MealForm"
 import NavBar from "./components/NavBar";
+import Homepage from "./components/Homepage"
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
@@ -29,9 +30,14 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <IngredientForm />
-      <MealForm />
+
       <Switch>
+        <ProtectedRoute path="/ingredients/create" exact={true}>
+          <IngredientForm />
+        </ProtectedRoute>
+        <ProtectedRoute path="/meals/create" exact={true}>
+          <MealForm />
+        </ProtectedRoute>
         <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
@@ -39,7 +45,10 @@ function App() {
           <SignUpForm />
         </Route>
         <ProtectedRoute path="/" exact={true}>
-          <h1>My Home Page</h1>
+          <h1>Splash</h1>
+        </ProtectedRoute>
+        <ProtectedRoute path="/homepage" exact={true}>
+          <Homepage />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
