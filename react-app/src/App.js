@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import IngredientForm from "./components/IngredientForm"
+import MealForm from "./components/MealForm"
 import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 // import { authenticate } from "./services/auth";
@@ -29,6 +30,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <IngredientForm />
+      <MealForm />
       <Switch>
         <Route path="/login" exact={true}>
           <LoginForm />
