@@ -1,9 +1,22 @@
 const SET_INGREDIENT = 'ingredient/SET_INGREDIENT'
+const GET_INGREDIENTS = 'ingredients/GET_INGREDIENTS'
 
 const setIngredient = (ingredients) => ({
     type: SET_INGREDIENT,
     ingredients
 })
+
+const getIngredients = (ingredients) => ({
+    type: GET_INGREDIENTS,
+    ingredients
+})
+
+export const getAllIngredients = () => async (dispatch) => {
+    const response = await fetch('/api/ingredients/')
+    let response2 = await response.json()
+    dispatch(getIngredients(response2))
+    // console.log(response2)
+}
 
 export const addToIngredients = (ingredient) => async (dispatch) => {
     const response = await fetch('/api/ingredients/', {
@@ -15,14 +28,18 @@ export const addToIngredients = (ingredient) => async (dispatch) => {
     })
     let response2 = await response.json()
     dispatch(setIngredient(response2))
-    console.log(response2)
+    // console.log(response2)
 }
 
-const initialState = {ingredient: null};
+const initialState = {ingredients: []};
 export default function ingredient(state = initialState, action) {
     switch (action.type) {
         case SET_INGREDIENT:
-            return { ...state, ...action.ingredients};
+            state.ingredients.push(action.ingredients)
+            return { ...state};
+        case GET_INGREDIENTS:
+            // action.ingredients.forEach(ingredient => state.ingredients.push(ingredient))
+            return {...state.ingredients, ...action.ingredients}
         default:
             return state;
     }

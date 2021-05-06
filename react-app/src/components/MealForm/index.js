@@ -65,7 +65,7 @@ const MealForm = () => {
             placeholder="Recipe goes here!"
           ></textarea>
         </div>
-        <button type="submit">Enter Ingredient</button>
+        <button type="submit">Create a Meal</button>
       </form>
     );
 

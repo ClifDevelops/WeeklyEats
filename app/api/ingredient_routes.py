@@ -22,4 +22,12 @@ def addToIngredients():
         # print(ingredient)
         return ingredient.to_dict()
     return
-        
+
+
+@ingredient_routes.route('/', methods=['GET'])
+@login_required
+def getIngredients():
+    ingredientsArray = Ingredient.query.all()
+    ingredientsObj = [ingredient.to_dict() for ingredient in ingredientsArray]
+    # print(ingredientsObj)
+    return {'ingredients': ingredientsObj}

@@ -19,4 +19,4 @@ def addToMeals():
         db.session.add(meal)
         db.session.commit()
         return meal.to_dict()
-    return
+    return 'Hello'

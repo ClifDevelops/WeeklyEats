@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { addToIngredients } from "../../store/ingredient"
+import AllIngredients from "../AllIngredients";
 import './IngredientForm.css'
 
 const IngredientForm = () => {
@@ -38,6 +39,7 @@ const IngredientForm = () => {
 
 
     return (
+      <div>
       <form onSubmit={onSubmit}>
         <div>
           <input
@@ -68,6 +70,8 @@ const IngredientForm = () => {
         </div>
         <button type="submit">Enter Ingredient</button>
       </form>
+      <AllIngredients />
+      </div>
     );
 
 
