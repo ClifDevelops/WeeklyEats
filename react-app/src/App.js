@@ -7,6 +7,7 @@ import IngredientForm from "./components/IngredientForm"
 import MealForm from "./components/MealForm"
 import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage"
+import Splash from "./components/Splash"
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
@@ -32,6 +33,7 @@ function App() {
       <NavBar />
 
       <Switch>
+        
         <ProtectedRoute path="/ingredients/create" exact={true}>
           <IngredientForm />
         </ProtectedRoute>
@@ -44,9 +46,9 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path="/" exact={true}>
-          <h1>Splash</h1>
-        </ProtectedRoute>
+        <Route path="/" exact={true}>
+          <Splash />
+        </Route>
         <ProtectedRoute path="/homepage" exact={true}>
           <Homepage />
         </ProtectedRoute>

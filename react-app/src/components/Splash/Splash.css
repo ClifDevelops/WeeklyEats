@@ -1,0 +1,15 @@
+.splash-container {
+    background-image: url('../../images/cooking-image-3.jpeg');
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.splash-forms-container {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    
+}
