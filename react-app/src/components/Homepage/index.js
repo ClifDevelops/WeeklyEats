@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import GroceryList from '../GroceryList'
 import "./Homepage.css";
 
 const Homepage = () => {
     return (
         <div className='homepage-container'>
-            <div>Main component</div>
-            <div>Grocery List</div>
+            <div className='main-container'>Main component</div>
+            <div className='gl-container'><GroceryList /></div>
         </div>
     )
 }

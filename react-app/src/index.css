@@ -2,4 +2,5 @@
 body {
     background-color: #d6ffd9;
     background-image: url('./images/Texture-background.png');
+    margin: 0 !important;
 }
