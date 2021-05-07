@@ -9,7 +9,7 @@ const IngredientForm = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [type, setType] = useState('');
-    const [measurementUnit, setMeasurementUnit] = useState('');
+    // const [measurementUnit, setMeasurementUnit] = useState('');
 
 
     const updateName = (e) => {
@@ -20,21 +20,21 @@ const IngredientForm = () => {
         setType(e.target.value)
     };
 
-    const updateMeasurementUnit = (e) => {
-        setMeasurementUnit(e.target.value);
-    };
+    // const updateMeasurementUnit = (e) => {
+    //     setMeasurementUnit(e.target.value);
+    // };
 
     const onSubmit = async (e) => {
         e.preventDefault();
         const ingredient = {
             name,
             type,
-            measurementUnit
+            // measurementUnit
         }
         dispatch(addToIngredients(ingredient))
         setName("");
         setType("");
-        setMeasurementUnit("");
+        // setMeasurementUnit("");
     }
 
 
@@ -59,7 +59,7 @@ const IngredientForm = () => {
             placeholder="Ingredient Type"
           ></input>
         </div>
-        <div>
+        {/* <div>
           <input
             type="text"
             name="measurementUnit"
@@ -67,7 +67,7 @@ const IngredientForm = () => {
             value={measurementUnit}
             placeholder="Measurement Unit"
           ></input>
-        </div>
+        </div> */}
         <button type="submit">Enter Ingredient</button>
       </form>
       <AllIngredients />

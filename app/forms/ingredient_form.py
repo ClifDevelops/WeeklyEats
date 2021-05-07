@@ -6,4 +6,4 @@ from app.models import Ingredient
 class IngredientForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
     type = StringField('type', validators=[DataRequired()])
-    measurementUnit = StringField('measurementUnit', validators=[DataRequired()])
+    # measurementUnit = StringField('measurementUnit', validators=[DataRequired()])

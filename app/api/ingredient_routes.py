@@ -15,7 +15,6 @@ def addToIngredients():
         ingredient = Ingredient(
             name=form.data['name'],
             type=form.data['type'],
-            measurementUnit=form.data['measurementUnit']
         )
         db.session.add(ingredient)
         db.session.commit()

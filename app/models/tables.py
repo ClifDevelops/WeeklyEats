@@ -3,21 +3,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
 
-# user_meals = db.Table(
-#     "user_meals",
-#     db.Column(
-#         "user_id",
-#         db.Integer,
-#         db.ForeignKey("users.id"),
-#         primary_key=True
-#     ),
-#     db.Column(
-#         "meal_id",
-#         db.Integer,
-#         db.ForeignKey("meals.id"),
-#         primary_key=True
-#     )
-# )
 class User(db.Model, UserMixin):
   __tablename__ = 'users'
 
@@ -28,11 +13,6 @@ class User(db.Model, UserMixin):
 
   user_meals = db.relationship("UserMeal", back_populates="user")
 
-  # meals = db.relationship(
-  #   "Meal",
-  #   secondary=user_meals,
-  #   back_populates="users"
-  # )
 
   @property
   def password(self):
@@ -60,18 +40,13 @@ class Meal(db.Model):
   __tablename__ = 'meals'
 
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(100), nullable=False)
+  name = db.Column(db.String(100), nullable=False, unique=True)
   cuisine = db.Column(db.String(50), nullable=False)
   recipe = db.Column(db.Text(), nullable=True)
 
   meal_ingredients = db.relationship("MealIngredient", back_populates="meal")
   user_meals = db.relationship("UserMeal", back_populates="meal")
 
-  # users = db.relationship(
-  #   "User",
-  #   secondary=user_meals,
-  #   back_populates="meals"
-  # )
 
   def to_dict(self):
     return {
@@ -90,7 +65,6 @@ class Ingredient(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(100), nullable=False)
   type = db.Column(db.String(50), nullable=False)
-  measurementUnit = db.Column(db.String(50), nullable=False)
 
   meal_ingredients = db.relationship("MealIngredient", back_populates="ingredient")
   
@@ -99,7 +73,6 @@ class Ingredient(db.Model):
         "id": self.id,
         "name": self.name,
         "type": self.type,
-        "measurementUnit": self.measurementUnit
     }
 
 
@@ -113,6 +86,7 @@ class MealIngredient(db.Model):
     meal_id = db.Column(db.Integer, db.ForeignKey('meals.id'), nullable=False)
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'), nullable=False)
     ingredient_quantity = db.Column(db.Float, nullable=False)
+    measurement_unit = db.Column(db.String(50), nullable=False)
 
     ingredient = db.relationship(
         "Ingredient", back_populates="meal_ingredients")
@@ -124,7 +98,8 @@ class MealIngredient(db.Model):
             "id": self.id,
             "meal_id": self.meal_id,
             "ingredient_id": self.ingredient_id,
-            "ingredient_quantity": self.ingredient_quantity
+            "ingredient_quantity": self.ingredient_quantity,
+            "measurement_unit": self.measurement_unit
         }
 
 class UserMeal(db.Model):

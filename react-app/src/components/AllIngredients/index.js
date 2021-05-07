@@ -19,7 +19,7 @@ const AllIngredients = () => {
                     <div key={ingredient[0]} className='ingredient-individual-container'>
                     <div>{ingredient.name}</div>
                     <div>{ingredient.type}</div>
-                    <div>{ingredient.measurementUnit}</div>
+                    {/* <div>{ingredient.measurementUnit}</div> */}
                     <button>Add to Grocery List</button>
                     </div>
                 )
