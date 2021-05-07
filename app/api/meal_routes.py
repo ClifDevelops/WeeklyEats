@@ -32,3 +32,11 @@ def addToMeals():
         return meal.to_dict()
 
     return 'Hello'
+
+@meal_routes.route('/', methods=['GET'])
+@login_required
+def getMeals():
+    mealsArray = Meal.query.all()
+    mealsObj = [meal.to_dict() for meal in mealsArray]
+    print(mealsObj)
+    return {'meals': mealsObj}

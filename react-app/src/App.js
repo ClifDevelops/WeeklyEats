@@ -5,6 +5,7 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import IngredientForm from "./components/IngredientForm"
 import MealForm from "./components/MealForm"
+import Meals from "./components/Meals"
 import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage"
 import Splash from "./components/Splash"
@@ -33,12 +34,14 @@ function App() {
       <NavBar />
 
       <Switch>
-        
         <ProtectedRoute path="/ingredients/create" exact={true}>
           <IngredientForm />
         </ProtectedRoute>
         <ProtectedRoute path="/meals/create" exact={true}>
           <MealForm />
+        </ProtectedRoute>
+        <ProtectedRoute path="/meals" exact={true}>
+          <Meals />
         </ProtectedRoute>
         <Route path="/login" exact={true}>
           <LoginForm />

@@ -38,8 +38,7 @@ export default function ingredient(state = initialState, action) {
             state.ingredients.push(action.ingredients)
             return { ...state};
         case GET_INGREDIENTS:
-            // action.ingredients.forEach(ingredient => state.ingredients.push(ingredient))
-            return {...state.ingredients, ...action.ingredients}
+            return {...action.ingredients}
         default:
             return state;
     }
