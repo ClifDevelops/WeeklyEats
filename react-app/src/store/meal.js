@@ -14,8 +14,8 @@ const getMeals = (meals) => ({
 export const getAllMeals = () => async (dispatch) => {
   const response = await fetch("/api/meals/");
   let response2 = await response.json();
-  dispatch(getMeals(response2));
   // console.log(response2)
+  dispatch(getMeals(response2));
 };
 
 export const addToMeals = (meal) => async (dispatch) => {
@@ -28,7 +28,7 @@ export const addToMeals = (meal) => async (dispatch) => {
     })
     let response2 = await response.json()
     dispatch (setMeal(response2))
-    console.log(response2)
+    // console.log(response2)
 }
 
 const initialState = {meals: []}
@@ -38,7 +38,15 @@ export default function meal(state = initialState, action) {
           state.meals.push(action.meal)
         return { ...state };
       case GET_MEALS:
-        return { ...action.meals };
+        const allMeals = {}
+        // console.log(action.meals.meals)
+        action.meals.meals.forEach(meal => {
+          allMeals[meal.id] = meal
+        })
+        // for (meal in allMeals){
+        //   meals.push(meal)
+        // }
+        return {...allMeals};
       default:
         return state;
     }

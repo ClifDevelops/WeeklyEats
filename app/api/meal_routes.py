@@ -44,5 +44,5 @@ def getMeals():
         mealsArray.append(Meal.query.filter(Meal.id == mealId).first())
    
     mealsObj = [meal.to_dict() for meal in mealsArray]
-    print(mealsObj)
+    # print(mealsObj)
     return {'meals': mealsObj}
