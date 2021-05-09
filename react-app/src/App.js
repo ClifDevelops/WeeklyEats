@@ -5,6 +5,7 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import IngredientForm from "./components/IngredientForm"
 import MealForm from "./components/MealForm"
+import MealDisplay from "./components/MealDisplay"
 import Meals from "./components/Meals"
 import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage"
@@ -42,6 +43,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/meals" exact={true}>
           <Meals />
+        </ProtectedRoute>
+        <ProtectedRoute path="/meals/:id" exact={true}>
+          <MealDisplay />
         </ProtectedRoute>
         <Route path="/login" exact={true}>
           <LoginForm />

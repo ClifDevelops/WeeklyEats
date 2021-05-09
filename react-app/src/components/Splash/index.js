@@ -9,11 +9,12 @@ const Splash = () => {
 
     return (
         <div className='splash-container'>
+            <div className='splash-title'>WeeklyEats</div>
             <div className='splash-forms-container'>
                 <LoginForm />
                 <SignUpForm />
-
             </div>
+            <div className='splash-banner-1'></div>
 
         </div>
     )

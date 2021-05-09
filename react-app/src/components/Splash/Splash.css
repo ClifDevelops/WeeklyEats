@@ -1,15 +1,31 @@
 .splash-container {
-    background-image: url('../../images/cooking-image-3.jpeg');
+    /* background-image: url('../../images/cooking-image-3.jpeg'); */
     background-size: cover;
-    height: 100vh;
+    height: 1000px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .splash-forms-container {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 2;
     display: flex;
     
+}
+
+.splash-banner-1 {
+    background-image: url('../../images/cooking-image-2.jpeg');
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end:3 ;
+
+}
+
+.splash-title {
+    font-size: 150px;
+    grid-column-start: 0;
+    grid-column-end: 3;
+    grid-row: 1;
+
 }

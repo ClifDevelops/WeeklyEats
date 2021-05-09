@@ -17,10 +17,11 @@ const Meals = () => {
             {meals?.map((meal) => {
                 return (
                   <div key={meal.id} className="meal-individual-card">
-                    <div>{meal.name}</div>
+                    <div><NavLink to={`/meals/${meal.id}`}>{meal.name}</NavLink></div>
                     <div>{meal.cuisine}</div>
                     <div>{meal.recipe}</div>
                     <button>Add to Grocery List</button>
+                    <button>Add ingredients to meal</button>
                   </div>
                 );
             })}

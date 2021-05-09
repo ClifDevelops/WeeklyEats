@@ -115,4 +115,11 @@ class UserMeal(db.Model):
   user = db.relationship("User", back_populates='user_meals')
   meal = db.relationship("Meal", back_populates='user_meals')
 
+  def to_dict(self):
+      return {
+          "id": self.id,
+          "user_id": self.user_id,
+          "meal_id": self.meal_id
+      }
+
 
