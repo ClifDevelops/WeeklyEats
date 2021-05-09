@@ -13,18 +13,6 @@ const Meals = () => {
         dispatch(getAllMeals())
     }, []);
 
-    // const mealCreator = (meals) => {
-    //     for (meal in meals) {
-    //         console.log(meal)
-    //         // <div key={meal.id} className="meal-individual-card">
-    //         //         <div><NavLink to={`/meals/${meal.id}`}>{meal.name}</NavLink></div>
-    //         //         <div>{meal.cuisine}</div>
-    //         //         <div>{meal.recipe}</div>
-    //         //         <button>Add to Grocery List</button>
-    //         //         <button>Add ingredients to meal</button>
-    //         //       </div>
-    //     }
-    // }
 
     return (
         <div>

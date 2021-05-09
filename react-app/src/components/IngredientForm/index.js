@@ -40,26 +40,34 @@ const IngredientForm = () => {
 
     return (
       <div>
-      <form onSubmit={onSubmit}>
-        <div>
-          <input
-            type="text"
-            name="name"
-            onChange={updateName}
-            value={name}
-            placeholder="Ingredient Name"
-          ></input>
-        </div>
-        <div>
-          <input
+        <form onSubmit={onSubmit}>
+          <div>
+            <input
+              type="text"
+              name="name"
+              onChange={updateName}
+              value={name}
+              placeholder="Ingredient Name"
+            ></input>
+          </div>
+          <div>
+            <select name="type" onChange={updateType} value={type}>
+              <option value="dairy">dairy</option>
+              <option value="fat">fat</option>
+              <option value="fruit">fruit</option>
+              <option value="grain">grain</option>
+              <option value="protein">protein</option>
+              <option value="vegetable">vegetable</option>
+            </select>
+            {/* <input
             type="text"
             name="type"
             onChange={updateType}
             value={type}
             placeholder="Ingredient Type"
-          ></input>
-        </div>
-        {/* <div>
+          ></input> */}
+          </div>
+          {/* <div>
           <input
             type="text"
             name="measurementUnit"
@@ -68,9 +76,9 @@ const IngredientForm = () => {
             placeholder="Measurement Unit"
           ></input>
         </div> */}
-        <button type="submit">Enter Ingredient</button>
-      </form>
-      <AllIngredients />
+          <button type="submit">Enter Ingredient</button>
+        </form>
+        <AllIngredients />
       </div>
     );
 

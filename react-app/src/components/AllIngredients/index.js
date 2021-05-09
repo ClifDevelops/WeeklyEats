@@ -10,7 +10,7 @@ const AllIngredients = () => {
     // console.log(ingredients)
     useEffect(() => {
         dispatch(getAllIngredients())
-    }, [])
+    }, [ingredients.length])
 
     return (
         <div>

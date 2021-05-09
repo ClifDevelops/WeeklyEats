@@ -44,7 +44,7 @@ function App() {
         <ProtectedRoute path="/meals" exact={true}>
           <Meals />
         </ProtectedRoute>
-        <ProtectedRoute path="/meals/:id" exact={true}>
+        <ProtectedRoute path="/meals/:mealId" exact={true}>
           <MealDisplay />
         </ProtectedRoute>
         <Route path="/login" exact={true}>

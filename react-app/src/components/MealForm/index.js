@@ -48,13 +48,26 @@ const MealForm = () => {
           ></input>
         </div>
         <div>
-          <input
+          <select name="cuisine" onChange={updateCuisine} value={cuisine}>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Cajun">Cajun</option>
+            <option value="Chinese">Chinese</option>
+            <option value="French">French</option>
+            <option value="Greek">Greek</option>
+            <option value="Indian">Indian</option>
+            <option value="Italian">Italian</option>
+            <option value="Korean">Korean</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Thai">Thai</option>
+          </select>
+          {/* <input
             type="text"
             name="cuisine"
             onChange={updateCuisine}
             value={cuisine}
             placeholder="Cuisine"
-          ></input>
+          ></input> */}
         </div>
         <div>
           <textarea
