@@ -50,6 +50,7 @@ def upgrade():
     sa.Column('name', sa.String(length=100), nullable=False),
     sa.Column('type', sa.String(length=50), nullable=False),
     sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('name')
     )
     op.create_table('meal_ingredients',
     sa.Column('id', sa.Integer(), nullable=False),

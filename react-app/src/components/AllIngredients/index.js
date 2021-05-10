@@ -1,22 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import { getAllIngredients } from "../../store/ingredient";
 import { addIngredientToGroceryList} from "../../store/grocerylist";
 import "./AllIngredients.css";
 
 const AllIngredients = () => {
     const dispatch = useDispatch()
-    const ingredients = useSelector(state => state?.ingredient)
+    // const [loaded, setLoaded] = useState(false)
     // console.log(ingredients)
     useEffect(() => {
-        dispatch(getAllIngredients())
+        dispatch(getAllIngredients());
     }, [])
+
+    const ingredients = useSelector(state => state?.ingredient)
+    
+    useEffect(() => { 
+    }, [Object.values(ingredients).length]);
+    
+    // useEffect(() => {
+    //     (async () => {
+    //       const ingredients = await dispatch(getAllIngredients());
+    //       if (ingredients) {
+    //         setLoaded(true);
+    //       } else {
+    //         return <Redirect to="/homepage" />;
+    //       }
+    //     })();  
+    // }, [dispatch]);
+    // useEffect(() => {
+    //   (async () => {
+    //     const thisEvent = await dispatch(getOneEvent(Number(id)));
+    //     if (thisEvent) {
+    //       setLoaded(true);
+    //     } else {
+    //       return <Redirect to="/" />;
+    //     }
+    //   })();
+    // }, [dispatch]);
 
     const addToGroceryList = (ingredient) => {
         dispatch(addIngredientToGroceryList(ingredient))
     }
-    if (ingredients){
+    
     return (
         <div>
             {Object.values(ingredients).map((ingredient) => {
@@ -29,14 +55,7 @@ const AllIngredients = () => {
                 )
             })}
         </div>
-    )} else {
-        return (
-            <div>
-            <div>LOADING</div>
-            <div>LOADING</div>
-            <div>LOADING</div></div>
-        )
-    }
+    )
 }
 
 export default AllIngredients

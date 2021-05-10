@@ -6,6 +6,6 @@ from app.models import Meal
 
 class MealForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
-    cuisine = SelectField('cuisine', validators=[DataRequired()])
+    cuisine = StringField('cuisine', validators=[DataRequired()])
     recipe = TextField('recipe', validators=[DataRequired()])
  

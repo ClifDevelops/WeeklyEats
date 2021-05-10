@@ -42,7 +42,7 @@ export default function ingredient(state = initialState, action) {
             
             return {...state};
         case GET_INGREDIENTS:
-            const allIngredients = {}
+            // const allIngredients = {}
             console.log('here is my action ingredients shit', action.ingredients)
             action.ingredients.ingredients.forEach((ingredient) => {
                 state[ingredient.id] = ingredient
