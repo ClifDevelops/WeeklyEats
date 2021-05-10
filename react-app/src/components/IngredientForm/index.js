@@ -8,7 +8,7 @@ import './IngredientForm.css'
 const IngredientForm = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    const [type, setType] = useState('');
+    const [type, setType] = useState('dairy');
     
 
 
@@ -32,7 +32,7 @@ const IngredientForm = () => {
        
         await dispatch(addToIngredients(ingredient))
         setName("");
-        setType("");
+        setType("dairy");
         
     }
 

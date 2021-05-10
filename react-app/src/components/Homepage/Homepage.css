@@ -1,7 +1,7 @@
 .homepage-container {
     display: grid;
     grid-template-columns: 600px 250px;
-    height: 750px;
+    height: 200px;
 }
 
 .main-container {

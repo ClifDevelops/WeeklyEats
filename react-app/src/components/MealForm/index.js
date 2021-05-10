@@ -33,6 +33,7 @@ const MealForm = () => {
         setName('');
         setCuisine('American');
         setRecipe('');
+        return <Redirect to='/meals' />
     };
 
 

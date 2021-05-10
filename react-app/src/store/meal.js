@@ -31,11 +31,12 @@ export const addToMeals = (meal) => async (dispatch) => {
     // console.log(response2)
 }
 
-const initialState = {meals: []}
+const initialState = {}
 export default function meal(state = initialState, action) {
     switch (action.type) {
       case SET_MEAL:
-          state.meals.push(action.meal)
+        state[action.meal.id] = action.meal
+          // state.meals.push(action.meal)
         return { ...state };
       case GET_MEALS:
         const allMeals = {}

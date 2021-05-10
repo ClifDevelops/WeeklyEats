@@ -18,7 +18,7 @@ const Homepage = () => {
     return (
         <div className='homepage-container'>
             <div className='main-container'>
-                <MealForm />
+                {/* <MealForm /> */}
                 <Meals />
             </div>
             <div className='gl-container'><GroceryList /></div>

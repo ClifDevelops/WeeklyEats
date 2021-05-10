@@ -15,14 +15,14 @@ const Meals = () => {
 
 
     return (
-        <div>
+        <div className='all-meals-container'>
             {Object.values(meals).map((meal) => {
                 return (
                   <div key={meal.id} className="meal-individual-card">
                       {/* {console.log(meal.id)} */}
                     <div><NavLink to={`/meals/${meal.id}`}>{meal.name}</NavLink></div>
                     <div>{meal.cuisine}</div>
-                    <div>{meal.recipe}</div>
+                    <div className='meal-recipe'>{meal.recipe}</div>
                     <button>Add to Grocery List</button>
                     <button>Add ingredients to meal</button>
                   </div>
@@ -30,17 +30,7 @@ const Meals = () => {
 
 
                 })}
-             {/* {meals?.map((meal) => {
-                return (
-                  <div key={meal.id} className="meal-individual-card">
-                    <div><NavLink to={`/meals/${meal.id}`}>{meal.name}</NavLink></div>
-                    <div>{meal.cuisine}</div>
-                    <div>{meal.recipe}</div>
-                    <button>Add to Grocery List</button>
-                    <button>Add ingredients to meal</button>
-                  </div>
-                );
-            })} */}
+             
         </div>
     )
 }
