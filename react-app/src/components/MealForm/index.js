@@ -7,7 +7,7 @@ import "./MealForm.css";
 const MealForm = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    const [cuisine, setCuisine] = useState('');
+    const [cuisine, setCuisine] = useState('American');
     const [recipe, setRecipe] = useState('');
 
     const updateName = (e) => {
@@ -31,7 +31,7 @@ const MealForm = () => {
         };
         dispatch(addToMeals(meal));
         setName('');
-        setCuisine('');
+        setCuisine('American');
         setRecipe('');
     };
 
@@ -61,13 +61,7 @@ const MealForm = () => {
             <option value="Mexican">Mexican</option>
             <option value="Thai">Thai</option>
           </select>
-          {/* <input
-            type="text"
-            name="cuisine"
-            onChange={updateCuisine}
-            value={cuisine}
-            placeholder="Cuisine"
-          ></input> */}
+          
         </div>
         <div>
           <textarea

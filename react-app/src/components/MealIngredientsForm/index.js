@@ -9,9 +9,9 @@ const MealIngredientsForm = ({mealId}) => {
     const dispatch = useDispatch();
 
     const ingredients = useSelector((state) => state?.ingredient);
-    console.log(ingredients)
+    // console.log(ingredients)
 
-    const [ingredient_id, setIngredient_id] = useState("");
+    const [ingredient_id, setIngredient_id] = useState(1);
     const [ingredient_quantity, setIngredient_quantity] = useState("");
     const [measurement_unit, setMeasurement_unit] = useState("");
 
@@ -19,6 +19,9 @@ const MealIngredientsForm = ({mealId}) => {
       dispatch(getAllIngredients());
     }, []);
 
+    const printMe = (e) => {
+      console.log(e)
+    }
     const updateMeasurementUnit = (e) => {
        setMeasurement_unit(e.target.value);
     };
@@ -45,11 +48,13 @@ const MealIngredientsForm = ({mealId}) => {
           <div>
             <select
               name="ingredient_id"
-              // onChange={setIngredient_id((e) => e.target.value)}
               value={ingredient_id}
+              onChange={(e) => setIngredient_id(e.target.value)}
             >
               {Object.values(ingredients).map((ingredient) => {
-                return <option value={ingredient.id}>{ingredient?.name}</option>;
+                return (
+                  <option value={ingredient?.id}>{ingredient?.name}</option>
+                );
               })}
             </select>
           </div>

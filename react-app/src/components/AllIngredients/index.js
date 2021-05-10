@@ -23,7 +23,7 @@ const AllIngredients = () => {
                     <div key={ingredient.id} className='ingredient-individual-container'>
                         <div>{ingredient.name}</div>
                         <div>{ingredient.type}</div>
-                        <button onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>
+                        <button className='ingredient-button' onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>
                     </div>
                 )
             })}

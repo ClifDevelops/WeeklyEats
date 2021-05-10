@@ -29,9 +29,10 @@ const IngredientForm = () => {
         const ingredient = {
             name,
             type,
-            // measurementUnit
+            
         }
-        dispatch(addToIngredients(ingredient))
+        console.log('we made it to this point')
+        await dispatch(addToIngredients(ingredient))
         setName("");
         setType("");
         // setMeasurementUnit("");

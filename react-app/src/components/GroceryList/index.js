@@ -15,11 +15,10 @@ const GroceryList = () => {
             {list.map((item) => {
                 return (
                     <div>
-                    <div key={item.id}>{item.name}</div>
-                    <div>
-                        <button>Remove</button>
-                    </div>
-
+                        <div key={item.id}>{item.name}</div>
+                        <div>
+                            <button>Remove</button>
+                        </div>
                     </div>
                 )
             })}

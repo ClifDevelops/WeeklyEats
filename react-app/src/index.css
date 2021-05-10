@@ -1,6 +1,9 @@
 /* TODO Add site wide styles */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;500;700&display=swap');
 body {
-    background-color: #fffdc9;
+    background-color: #FFFBDF;
     background-image: url('./images/Texture-background.png');
     margin: 0 !important;
+    font-family: 'Noto Serif TC', serif;
+    color: #334443
 }
