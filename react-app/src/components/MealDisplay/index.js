@@ -33,7 +33,7 @@ const MealDisplay = () => {
                 <button> Edit Meal</button>
                 <button> Add ingredients to meal </button>
             </div>
-            <MealIngredientsForm />
+            <MealIngredientsForm mealId={mealId}/>
         </div>
     )
 

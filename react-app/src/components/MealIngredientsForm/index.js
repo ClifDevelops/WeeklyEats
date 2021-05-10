@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { addToMeals } from "../../store/meal";
-import { getAllIngredients } from "../../store/ingredient";
+import ingredient, { getAllIngredients } from "../../store/ingredient";
 import "./MealIngredientsForm.css";
 
-const MealIngredientsForm = () => {
+const MealIngredientsForm = ({mealId}) => {
     const dispatch = useDispatch();
 
-    const ingredients = useSelector((state) => state?.ingredient?.ingredients);
+    const ingredients = useSelector((state) => state?.ingredient);
     console.log(ingredients)
 
     const [ingredient_id, setIngredient_id] = useState("");
@@ -24,20 +24,35 @@ const MealIngredientsForm = () => {
     };
      const onSubmit = async (e) => {
        e.preventDefault();
-    //    const meal = {
-    //      name,
-    //      cuisine,
-    //      recipe,
-    //    };
-    //    dispatch(addToMeals(meal));
-    //    setName("");
-    //    setCuisine("");
-    //    setRecipe("");
+       const mealIngredient = {
+         meal_id: mealId,
+         ingredient_id,
+         ingredient_quantity,
+         measurement_unit,
+       };
+      //  dispatch(addToMeals(meal));
+       setIngredient_id("");
+       setIngredient_quantity("");
+       setMeasurement_unit("");
      };
-
+    if (ingredients) {
     return (
       <form onSubmit={onSubmit}>
         <div>
+          <div>
+            <label htmlFor="ingredient_id">Ingredient</label>
+          </div>
+          <div>
+            <select
+              name="ingredient_id"
+              // onChange={setIngredient_id((e) => e.target.value)}
+              value={ingredient_id}
+            >
+              {Object.values(ingredients).map((ingredient) => {
+                return <option value={ingredient.id}>{ingredient?.name}</option>;
+              })}
+            </select>
+          </div>
           <div>
             <label htmlFor="ingredient_quantity">Ingredient Quantity</label>
           </div>
@@ -76,8 +91,14 @@ const MealIngredientsForm = () => {
             </select>
           </div>
         </div>
+        <button type="submit">Add to Meal</button>
       </form>
     );
+  } else {
+    return (
+      <div></div>
+    )
+  }
 }
 
 export default MealIngredientsForm;

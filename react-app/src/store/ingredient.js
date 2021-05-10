@@ -38,7 +38,11 @@ export default function ingredient(state = initialState, action) {
             state.ingredients.push(action.ingredients)
             return { ...state};
         case GET_INGREDIENTS:
-            return {...action.ingredients}
+            const allIngredients = {}
+            action.ingredients.ingredients.forEach(ingredient => {
+                allIngredients[ingredient.id] = ingredient
+            })
+            return {...allIngredients};
         default:
             return state;
     }
