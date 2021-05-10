@@ -9,7 +9,7 @@ const IngredientForm = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [type, setType] = useState('');
-    // const [measurementUnit, setMeasurementUnit] = useState('');
+    
 
 
     const updateName = (e) => {
@@ -20,9 +20,7 @@ const IngredientForm = () => {
         setType(e.target.value)
     };
 
-    // const updateMeasurementUnit = (e) => {
-    //     setMeasurementUnit(e.target.value);
-    // };
+  
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -31,11 +29,11 @@ const IngredientForm = () => {
             type,
             
         }
-        console.log('we made it to this point')
+       
         await dispatch(addToIngredients(ingredient))
         setName("");
         setType("");
-        // setMeasurementUnit("");
+        
     }
 
 
@@ -60,26 +58,10 @@ const IngredientForm = () => {
               <option value="protein">protein</option>
               <option value="vegetable">vegetable</option>
             </select>
-            {/* <input
-            type="text"
-            name="type"
-            onChange={updateType}
-            value={type}
-            placeholder="Ingredient Type"
-          ></input> */}
           </div>
-          {/* <div>
-          <input
-            type="text"
-            name="measurementUnit"
-            onChange={updateMeasurementUnit}
-            value={measurementUnit}
-            placeholder="Measurement Unit"
-          ></input>
-        </div> */}
           <button type="submit">Enter Ingredient</button>
         </form>
-        <AllIngredients />
+        {/* <AllIngredients /> */}
       </div>
     );
 

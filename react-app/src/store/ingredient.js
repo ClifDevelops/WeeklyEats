@@ -19,7 +19,7 @@ export const getAllIngredients = () => async (dispatch) => {
 }
 
 export const addToIngredients = (ingredient) => async (dispatch) => {
-    console.log('HELOOOOOOOO', ingredient)
+    // console.log('HELOOOOOOOO', ingredient)
     const response = await fetch('/api/ingredients/', {
       method: "POST",
       headers: {
@@ -32,7 +32,7 @@ export const addToIngredients = (ingredient) => async (dispatch) => {
     // console.log(response2)
 }
 
-const initialState = {ingredients: []};
+const initialState = {};
 export default function ingredient(state = initialState, action) {
     switch (action.type) {
         case SET_INGREDIENT:
@@ -40,14 +40,15 @@ export default function ingredient(state = initialState, action) {
             const ingredient_object = action.ingredient
             state[i_id] = ingredient_object
             
-            return { ...state};
+            return {...state};
         case GET_INGREDIENTS:
             const allIngredients = {}
-            action.ingredients.ingredients.forEach(ingredient => {
-                allIngredients[ingredient.id] = ingredient
+            console.log('here is my action ingredients shit', action.ingredients)
+            action.ingredients.ingredients.forEach((ingredient) => {
+                state[ingredient.id] = ingredient
             })
             console.log('here is state inside of get', state)
-            return {...allIngredients};
+            return state;
         default:
             return state;
     }

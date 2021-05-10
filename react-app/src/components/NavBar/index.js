@@ -33,6 +33,11 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div>
+          <NavLink to="/ingredients" exact={true} activeClassName="active">
+            Ingredients
+          </NavLink>
+        </div>
+        <div>
           <NavLink
             to="/ingredients/create"
             exact={true}

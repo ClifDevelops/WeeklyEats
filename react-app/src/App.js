@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import IngredientForm from "./components/IngredientForm"
+import AllIngredients from "./components/AllIngredients"
 import MealForm from "./components/MealForm"
 import MealDisplay from "./components/MealDisplay"
 import Meals from "./components/Meals"
@@ -37,6 +38,9 @@ function App() {
       <Switch>
         <ProtectedRoute path="/ingredients/create" exact={true}>
           <IngredientForm />
+        </ProtectedRoute>
+        <ProtectedRoute path="/ingredients" exact={true}>
+          <AllIngredients />
         </ProtectedRoute>
         <ProtectedRoute path="/meals/create" exact={true}>
           <MealForm />

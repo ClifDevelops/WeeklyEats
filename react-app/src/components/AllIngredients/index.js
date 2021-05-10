@@ -16,6 +16,7 @@ const AllIngredients = () => {
     const addToGroceryList = (ingredient) => {
         dispatch(addIngredientToGroceryList(ingredient))
     }
+    if (ingredients){
     return (
         <div>
             {Object.values(ingredients).map((ingredient) => {
@@ -28,7 +29,14 @@ const AllIngredients = () => {
                 )
             })}
         </div>
-    )
+    )} else {
+        return (
+            <div>
+            <div>LOADING</div>
+            <div>LOADING</div>
+            <div>LOADING</div></div>
+        )
+    }
 }
 
 export default AllIngredients
