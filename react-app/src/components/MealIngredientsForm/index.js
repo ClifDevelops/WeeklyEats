@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToMealIngredients } from "../../store/meal";
+import { useHistory } from "react-router-dom"
+import { addToMealIngredients, getAllMeals } from "../../store/meal";
 import { getAllIngredients } from "../../store/ingredient";
 import "./MealIngredientsForm.css";
 
 const MealIngredientsForm = ({mealId}) => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const ingredients = useSelector((state) => state?.ingredient);
     
@@ -32,8 +34,10 @@ const MealIngredientsForm = ({mealId}) => {
         //  ingredient_quantity,
         //  measurement_unit,
        };
-       dispatch(addToMealIngredients(mealIngredient));
+       await dispatch(addToMealIngredients(mealIngredient));
+       await dispatch(getAllMeals());
        setIngredient_id(1);
+      //  history.push(`/meals/${mealId}`)
       //  setIngredient_quantity(1);
       //  setMeasurement_unit("each");
      };
