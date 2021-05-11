@@ -44,7 +44,7 @@ const AllIngredients = () => {
     }
     
     return (
-        <div>
+        <div className='all-ingredients-container'>
             {Object.values(ingredients).map((ingredient) => {
                 return (
                     <div key={ingredient.id} className='ingredient-individual-container'>

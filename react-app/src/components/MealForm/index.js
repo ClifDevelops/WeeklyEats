@@ -38,43 +38,48 @@ const MealForm = () => {
 
 
     return (
-      <form onSubmit={onSubmit}>
-        <div>
-          <input
-            type="text"
-            name="name"
-            onChange={updateName}
-            value={name}
-            placeholder="Meal Name"
-          ></input>
-        </div>
-        <div>
-          <select name="cuisine" onChange={updateCuisine} value={cuisine}>
-            <option value="American">American</option>
-            <option value="British">British</option>
-            <option value="Cajun">Cajun</option>
-            <option value="Chinese">Chinese</option>
-            <option value="French">French</option>
-            <option value="Greek">Greek</option>
-            <option value="Indian">Indian</option>
-            <option value="Italian">Italian</option>
-            <option value="Korean">Korean</option>
-            <option value="Mexican">Mexican</option>
-            <option value="Thai">Thai</option>
-          </select>
-          
-        </div>
-        <div>
-          <textarea
-            type="text"
-            name="recipe"
-            onChange={updateRecipe}
-            value={recipe}
-            placeholder="Recipe goes here!"
-          ></textarea>
-        </div>
-        <button type="submit">Create a Meal</button>
-      </form>
+      <div className="meal-form-container">
+        <form className="meal-form" onSubmit={onSubmit}>
+          <div className="meal-form-div">
+            <input
+              type="text"
+              name="name"
+              onChange={updateName}
+              value={name}
+              placeholder="Meal Name"
+              className='meal-form-input'
+            ></input>
+          </div>
+          <div className="meal-form-div">
+            <select className='meal-form-select' name="cuisine" onChange={updateCuisine} value={cuisine}>
+              <option value="American">American</option>
+              <option value="British">British</option>
+              <option value="Cajun">Cajun</option>
+              <option value="Chinese">Chinese</option>
+              <option value="French">French</option>
+              <option value="Greek">Greek</option>
+              <option value="Indian">Indian</option>
+              <option value="Italian">Italian</option>
+              <option value="Korean">Korean</option>
+              <option value="Mexican">Mexican</option>
+              <option value="Thai">Thai</option>
+            </select>
+          </div>
+          <div className="meal-form-div">
+            <textarea
+              type="text"
+              name="recipe"
+              onChange={updateRecipe}
+              value={recipe}
+              placeholder="Recipe goes here!"
+              className="meal-form-textarea"
+            ></textarea>
+          </div>
+          <button className="meal-form-button" type="submit">
+            Create a Meal
+          </button>
+        </form>
+      </div>
     );
 
 

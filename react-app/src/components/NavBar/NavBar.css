@@ -8,3 +8,18 @@
     padding: 5px;
     font-size: 25px;
 }
+
+.navbar-link {
+    text-decoration: none;
+    color: #34656d;
+    box-sizing: border-box;
+    margin: 10px;
+}
+.navbar-link:visited {
+    color: #34656d;
+}
+.navbar-link:hover {
+    /* font-size: 26px; */
+    text-decoration: underline;
+    font-weight: 600;
+}

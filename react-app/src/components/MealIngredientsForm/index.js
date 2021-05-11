@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { addToMeals } from "../../store/meal";
+import { addToMealIngredients } from "../../store/meal";
 import ingredient, { getAllIngredients } from "../../store/ingredient";
 import "./MealIngredientsForm.css";
 
@@ -33,7 +33,7 @@ const MealIngredientsForm = ({mealId}) => {
          ingredient_quantity,
          measurement_unit,
        };
-      //  dispatch(addToMeals(meal));
+       dispatch(addToMealIngredients(mealIngredient));
        setIngredient_id("");
        setIngredient_quantity("");
        setMeasurement_unit("");

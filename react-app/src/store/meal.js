@@ -31,6 +31,16 @@ export const addToMeals = (meal) => async (dispatch) => {
     // console.log(response2)
 }
 
+export const addToMealIngredients = (mealIngredient) => async (dispatch) => {
+  const response = await fetch("/api/meals/ingredient", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(mealIngredient),
+  });
+}
+
 const initialState = {}
 export default function meal(state = initialState, action) {
     switch (action.type) {

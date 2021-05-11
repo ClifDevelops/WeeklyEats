@@ -27,7 +27,6 @@ def addToMeals():
         db.session.add(user_meal)
         db.session.commit()
         return meal.to_dict()
-
     return 'Hello'
 
 @meal_routes.route('/', methods=['GET'])
@@ -46,3 +45,29 @@ def getMeals():
     mealsObj = [meal.to_dict() for meal in mealsArray]
     # print(mealsObj)
     return {'meals': mealsObj}
+
+
+# @meal_routes.route('/ingredient', methods=['POST'])
+# @login_required
+# def addToMealIngredients():
+    
+   
+#     form = MealForm()
+#     form['csrf_token'].data = request.cookies['csrf_token']
+#     if form.validate_on_submit():
+    #     meal = Meal(
+    #         name=form.data['name'],
+    #         cuisine=form.data['cuisine'],
+    #         recipe=form.data['recipe']
+    #     )
+    #     db.session.add(meal)
+    #     db.session.commit()
+    # #connect the meal and the current user on the userMeals table
+    #     new_meal = Meal.query.filter(Meal.name == form.data['name']).first()
+    #     new_meal_dict = new_meal.to_dict()
+    #     user_meal = UserMeal(user_id=userId, meal_id=new_meal_dict['id'])
+    #     db.session.add(user_meal)
+    #     db.session.commit()
+    #     return meal.to_dict()
+
+    # return 'Hello'
