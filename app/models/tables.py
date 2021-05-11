@@ -53,7 +53,8 @@ class Meal(db.Model):
       "id": self.id,
       "name": self.name,
       "cuisine": self.cuisine,
-      "recipe": self.recipe
+      "recipe": self.recipe,
+      "meal_ingredients": [meal_ingredient.to_dict() for meal_ingredient in self.meal_ingredients]
     }
 
 
@@ -85,8 +86,8 @@ class MealIngredient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     meal_id = db.Column(db.Integer, db.ForeignKey('meals.id'), nullable=False)
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'), nullable=False)
-    ingredient_quantity = db.Column(db.Float, nullable=False)
-    measurement_unit = db.Column(db.String(50), nullable=False)
+    # ingredient_quantity = db.Column(db.Float, nullable=False)
+    # measurement_unit = db.Column(db.String(50), nullable=False)
 
     ingredient = db.relationship(
         "Ingredient", back_populates="meal_ingredients")
@@ -98,8 +99,9 @@ class MealIngredient(db.Model):
             "id": self.id,
             "meal_id": self.meal_id,
             "ingredient_id": self.ingredient_id,
-            "ingredient_quantity": self.ingredient_quantity,
-            "measurement_unit": self.measurement_unit
+            # "ingredient_quantity": self.ingredient_quantity,
+            # "measurement_unit": self.measurement_unit,
+            "ingredient": self.ingredient.to_dict()
         }
 
 class UserMeal(db.Model):

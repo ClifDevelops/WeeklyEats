@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { addToMealIngredients } from "../../store/meal";
-import ingredient, { getAllIngredients } from "../../store/ingredient";
+import { getAllIngredients } from "../../store/ingredient";
 import "./MealIngredientsForm.css";
 
 const MealIngredientsForm = ({mealId}) => {
     const dispatch = useDispatch();
 
     const ingredients = useSelector((state) => state?.ingredient);
-    // console.log(ingredients)
+    
 
     const [ingredient_id, setIngredient_id] = useState(1);
-    const [ingredient_quantity, setIngredient_quantity] = useState("");
-    const [measurement_unit, setMeasurement_unit] = useState("");
+    // const [ingredient_quantity, setIngredient_quantity] = useState(1);
+    // const [measurement_unit, setMeasurement_unit] = useState("each");
 
     useEffect(() => {
       dispatch(getAllIngredients());
@@ -22,21 +21,21 @@ const MealIngredientsForm = ({mealId}) => {
     const printMe = (e) => {
       console.log(e)
     }
-    const updateMeasurementUnit = (e) => {
-       setMeasurement_unit(e.target.value);
-    };
+    // const updateMeasurementUnit = (e) => {
+    //    setMeasurement_unit(e.target.value);
+    // };
      const onSubmit = async (e) => {
        e.preventDefault();
        const mealIngredient = {
          meal_id: mealId,
          ingredient_id,
-         ingredient_quantity,
-         measurement_unit,
+        //  ingredient_quantity,
+        //  measurement_unit,
        };
        dispatch(addToMealIngredients(mealIngredient));
-       setIngredient_id("");
-       setIngredient_quantity("");
-       setMeasurement_unit("");
+       setIngredient_id(1);
+      //  setIngredient_quantity(1);
+      //  setMeasurement_unit("each");
      };
     if (ingredients) {
     return (
@@ -58,7 +57,7 @@ const MealIngredientsForm = ({mealId}) => {
               })}
             </select>
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="ingredient_quantity">Ingredient Quantity</label>
           </div>
           <div>
@@ -94,7 +93,7 @@ const MealIngredientsForm = ({mealId}) => {
               <option value="kg">kg</option>
               <option value="each">each</option>
             </select>
-          </div>
+          </div> */}
         </div>
         <button type="submit">Add to Meal</button>
       </form>

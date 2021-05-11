@@ -39,6 +39,7 @@ export const addToMealIngredients = (mealIngredient) => async (dispatch) => {
     },
     body: JSON.stringify(mealIngredient),
   });
+  console.log('MI POST RETURNED', response)
 }
 
 const initialState = {}
