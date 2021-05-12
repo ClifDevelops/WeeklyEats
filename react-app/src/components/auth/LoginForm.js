@@ -18,6 +18,16 @@ const LoginForm = () => {
     }
   };
 
+  const demoLogin = async () => {
+    setEmail('Clif@Clif.com')
+    setPassword('Clif')
+    const data = await dispatch(login(email, password));
+    if (data.errors) {
+      setErrors(data.errors);
+    }
+
+  }
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -57,6 +67,7 @@ const LoginForm = () => {
           onChange={updatePassword}
         />
         <button type="submit">Login</button>
+        <button onClick={demoLogin}> Or try as a Demo User!</button>
       </div>
     </form>
   );

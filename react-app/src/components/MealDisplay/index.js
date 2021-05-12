@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllMeals } from "../../store/meal";
 import { deleteFromGroceryList, addToGroceryList } from "../../store/grocerylist";
@@ -36,7 +36,9 @@ const MealDisplay = () => {
             <div className='meal-display-cuisine'>Cuisine: {meal?.cuisine}</div>
             <div className='meal-display-recipe-title'> RECIPE</div>
             <div className='meal-display-recipe'>{meal?.recipe}</div>
-            <button className='meal-edit-button'> Edit Meal</button>
+            <NavLink to={`/meals/${mealId}/edit`}>
+              <button className='meal-edit-button'> Edit Meal</button>
+            </NavLink>
           </div>
           <div className='meal-display-ingredients-container'>
             <div>INGREDIENTS</div>

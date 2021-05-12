@@ -14,6 +14,7 @@ import Splash from "./components/Splash"
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
+import EditMealForm from "./components/EditMealForm";
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -50,6 +51,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/meals/:mealId" exact={true}>
           <MealDisplay />
+        </ProtectedRoute>
+        <ProtectedRoute path="/meals/:mealId/edit" exact={true}>
+          <EditMealForm />
         </ProtectedRoute>
         <Route path="/login" exact={true}>
           <LoginForm />

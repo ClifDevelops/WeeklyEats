@@ -30,6 +30,18 @@ export const addToMeals = (meal) => async (dispatch) => {
     dispatch (setMeal(response2))
     // console.log(response2)
 }
+export const editMeal = (meal) => async (dispatch) => {
+  const response = await fetch("/api/meals/edit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(meal),
+  });
+  let response2 = await response.json();
+  dispatch(setMeal(response2));
+  // console.log(response2)
+};
 
 export const addToMealIngredients = (mealIngredient) => async (dispatch) => {
   const response = await fetch("/api/meals/ingredient", {

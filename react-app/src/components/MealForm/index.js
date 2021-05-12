@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { addToMeals } from "../../store/meal";
 import "./MealForm.css";
 
@@ -9,6 +9,7 @@ const MealForm = () => {
     const [name, setName] = useState('');
     const [cuisine, setCuisine] = useState('American');
     const [recipe, setRecipe] = useState('');
+    const history = useHistory()
 
     const updateName = (e) => {
         setName(e.target.value)
@@ -33,7 +34,8 @@ const MealForm = () => {
         setName('');
         setCuisine('American');
         setRecipe('');
-        return <Redirect to='/meals' />
+        history.push('/meals')
+        
     };
 
 

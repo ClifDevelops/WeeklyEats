@@ -7,11 +7,11 @@ const NavBar = () => {
   return (
     <nav>
       <div className="nav-container">
-        <div>
+        {/* <div>
           <NavLink to="/" exact={true} className="navbar-link">
             Home
           </NavLink>
-        </div>
+        </div> */}
         <div>
           <NavLink to="/homepage" exact={true} className="navbar-link">
             Homepage

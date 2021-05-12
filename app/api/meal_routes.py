@@ -29,6 +29,30 @@ def addToMeals():
         return meal.to_dict()
     return 'Hello'
 
+
+@meal_routes.route('/edit', methods=['POST'])
+@login_required
+def editMeal():
+    #add meal to Meal table
+    form = MealForm()
+    meal_id = request.json['meal_id']
+    updated_meal = Meal.query.filter(Meal.id == meal_id).first()
+    updated_meal.name = form.data['name']
+    updated_meal.cuisine = form.data['cuisine']
+    updated_meal.recipe = form.data['recipe']
+    form['csrf_token'].data = request.cookies['csrf_token']
+    db.session.commit()
+    # if form.validate_on_submit():
+    #     updated_meal = Meal(
+    #         name=form.data['name'],
+    #         cuisine=form.data['cuisine'],
+    #         recipe=form.data['recipe']
+    #     )
+    #     db.session.add(updated_meal)
+    #     db.session.commit()
+    #     return updated_meal.to_dict()
+    return updated_meal.to_dict()
+
 @meal_routes.route('/', methods=['GET'])
 @login_required
 def getMeals():
