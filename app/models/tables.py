@@ -40,7 +40,7 @@ class Meal(db.Model):
   __tablename__ = 'meals'
 
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(100), nullable=False, unique=True)
+  name = db.Column(db.String(100), nullable=False)
   cuisine = db.Column(db.String(50), nullable=False)
   recipe = db.Column(db.Text(), nullable=True)
 
