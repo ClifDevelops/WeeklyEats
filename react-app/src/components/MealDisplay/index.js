@@ -6,6 +6,7 @@ import { getAllMeals } from "../../store/meal";
 import { deleteFromGroceryList, addToGroceryList } from "../../store/grocerylist";
 import { getAllIngredients } from "../../store/ingredient";
 import MealIngredientsForm from "../MealIngredientsForm";
+import './MealDisplay.css'
 
 const MealDisplay = () => {
     const dispatch = useDispatch();
@@ -13,8 +14,8 @@ const MealDisplay = () => {
     const { mealId } = useParams();
     const meal = useSelector(state => state?.meal[mealId])
     const ingredients = useSelector((state) => state?.ingredient?.ingredients);
-    console.log('HERE IT IS', meal?.meal_ingredients.forEach(ingredient => ingredient.ingredient['name']))
-    console.log("THE NEXT ONE", meal?.meal_ingredients[0].ingredient.name);
+    // console.log('HERE IT IS', meal?.meal_ingredients.forEach(ingredient => ingredient.ingredient['name']))
+    // console.log("THE NEXT ONE", meal?.meal_ingredients[0].ingredient.name);
 
      useEffect(() => {
        dispatch(getAllMeals());
@@ -30,24 +31,25 @@ const MealDisplay = () => {
     return (
       <div>
         <div className="meal-display-container">
-          <div>{meal?.name}</div>
-          <div>Cuisine: {meal?.cuisine}</div>
-          <div>INGREDIENTS</div>
-          {/* <div>{meal?.meal_ingredients[0].ingredient.name}</div> */}
-          <div>{meal?.meal_ingredients.map((ingredient) => {
-              return (
-                  <div>{ingredient.ingredient.name}</div>
-              )
-          })}</div>
-          <div> RECIPE</div>
-          <div>{meal?.recipe}</div>
-          <button> Edit Meal</button>
-          <button> Add ingredients to meal </button>
+          <div className='meal-container'>
+            <div className='meal-display-name'>{meal?.name}</div>
+            <div className='meal-display-cuisine'>Cuisine: {meal?.cuisine}</div>
+            <div className='meal-display-recipe-title'> RECIPE</div>
+            <div className='meal-display-recipe'>{meal?.recipe}</div>
+            <button className='meal-edit-button'> Edit Meal</button>
+          </div>
+          <div className='meal-display-ingredients-container'>
+            <div>INGREDIENTS</div>
+            {/* <div>{meal?.meal_ingredients[0].ingredient.name}</div> */}
+            <div>{meal?.meal_ingredients.map((ingredient) => {
+                return (
+                    <div>{ingredient.ingredient.name}</div>
+                )})}</div>
+            <MealIngredientsForm mealId={mealId} />
+          </div>
         </div>
-        <MealIngredientsForm mealId={mealId} />
       </div>
     );
-
 }
 
 export default MealDisplay
