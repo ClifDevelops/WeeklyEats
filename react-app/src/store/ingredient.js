@@ -1,5 +1,6 @@
 const SET_INGREDIENT = 'ingredient/SET_INGREDIENT'
 const GET_INGREDIENTS = 'ingredients/GET_INGREDIENTS'
+const REMOVE_INGREDIENTS = "ingredients/REMOVE_INGREDIENTS";
 
 const setIngredient = (ingredient) => ({
     type: SET_INGREDIENT,
@@ -9,6 +10,10 @@ const setIngredient = (ingredient) => ({
 const getIngredients = (ingredients) => ({
     type: GET_INGREDIENTS,
     ingredients
+})
+
+const removeIngredients = () => ({
+    type: REMOVE_INGREDIENTS
 })
 
 export const getAllIngredients = () => async (dispatch) => {
@@ -32,6 +37,10 @@ export const addToIngredients = (ingredient) => async (dispatch) => {
     // console.log(response2)
 }
 
+export const logoutIngredients = () => async (dispatch) => {
+  dispatch(removeIngredients());
+};
+
 const initialState = {};
 export default function ingredient(state = initialState, action) {
     switch (action.type) {
@@ -49,6 +58,8 @@ export default function ingredient(state = initialState, action) {
             })
             console.log('here is state inside of get', state)
             return state;
+        case REMOVE_INGREDIENTS:
+            return {}
         default:
             return state;
     }

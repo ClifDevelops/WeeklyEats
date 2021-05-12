@@ -1,5 +1,6 @@
 const SET_MEAL = 'meal/SET_MEAL'
 const GET_MEALS = 'meals/GET_MEALS'
+const REMOVE_MEALS = 'meals/REMOVE_MEALS'
 
 const setMeal = (meal) => ({
     type: SET_MEAL,
@@ -10,6 +11,10 @@ const getMeals = (meals) => ({
   type: GET_MEALS,
   meals,
 });
+
+const removeMeals = () => ({
+  type: REMOVE_MEALS
+})
 
 export const getAllMeals = () => async (dispatch) => {
   const response = await fetch("/api/meals/");
@@ -43,6 +48,10 @@ export const editMeal = (meal) => async (dispatch) => {
   // console.log(response2)
 };
 
+export const logoutMeals = () => async (dispatch) => {
+  dispatch(removeMeals());
+}
+
 export const addToMealIngredients = (mealIngredient) => async (dispatch) => {
   const response = await fetch("/api/meals/ingredient", {
     method: "POST",
@@ -71,6 +80,8 @@ export default function meal(state = initialState, action) {
         //   meals.push(meal)
         // }
         return {...allMeals};
+      case REMOVE_MEALS:
+        return {}
       default:
         return state;
     }

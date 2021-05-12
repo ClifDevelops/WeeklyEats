@@ -50,6 +50,7 @@ const MealForm = () => {
               value={name}
               placeholder="Meal Name"
               className='meal-form-input'
+              required
             ></input>
           </div>
           <div className="meal-form-div">
