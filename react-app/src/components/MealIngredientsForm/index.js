@@ -13,6 +13,7 @@ const MealIngredientsForm = ({mealId}) => {
     
 
     const [ingredient_id, setIngredient_id] = useState(1);
+    const [searchTerm, setSearchTerm] = useState("")
     // const [ingredient_quantity, setIngredient_quantity] = useState(1);
     // const [measurement_unit, setMeasurement_unit] = useState("each");
 
@@ -50,12 +51,21 @@ const MealIngredientsForm = ({mealId}) => {
               <label htmlFor="ingredient_id">Ingredient</label>
             </div>
             <div>
+              <input type="text" placeholder="Filter your options" onChange={(e) => {setSearchTerm(e.target.value)}} />
+            </div>
+            <div>
               <select
                 name="ingredient_id"
                 value={ingredient_id}
                 onChange={(e) => setIngredient_id(e.target.value)}
               >
-                {Object.values(ingredients).map((ingredient) => {
+                {Object.values(ingredients).filter((ingredient) => {
+                  if (searchTerm === "") {
+                    return ingredient
+                  } else if (ingredient?.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    return ingredient
+                  } 
+                }).map((ingredient) => {
                   return (
                     <option value={ingredient?.id}>{ingredient?.name}</option>
                   );
