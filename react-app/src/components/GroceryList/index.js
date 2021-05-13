@@ -6,21 +6,21 @@ import "./GroceryList.css";
 
 const GroceryList = () => {
     const dispatch = useDispatch();
-    const list = useSelector((state) => state?.groceryList?.groceryList);
+    const list = useSelector((state) => state?.groceryList);
     console.log(list)
 
     return (
         <div className='grocery-list-container'>
             <div>GROCERY LIST</div>
-            {list.map((item) => {
+            {Object.values(list).map((item) => {
                 return (
+                  <div key={item.id}>
+                    <div>{item.name}</div>
                     <div>
-                        <div key={item.id}>{item.name}</div>
-                        <div>
-                            <button>Remove</button>
-                        </div>
+                      <button>Remove</button>
                     </div>
-                )
+                  </div>
+                );
             })}
              </div>
     )

@@ -1,7 +1,7 @@
 const SET_GL_INGREDIENT = "ingredient/SET_GL_INGREDIENT";
 const REMOVE_GL_INGREDIENT = "ingredient/REMOVE_GL_INGREDIENT";
 
-const setIngredient = (ingredient) => ({
+const setGLIngredient = (ingredient) => ({
   type: SET_GL_INGREDIENT,
   ingredient,
 });
@@ -11,22 +11,21 @@ const removeGLIngredient = () => ({
 });
 
 export const addIngredientToGroceryList = (ingredient) => async (dispatch) => {
-    dispatch(setIngredient(ingredient))
+    dispatch(setGLIngredient(ingredient))
 }
 
 export const logoutGL = () => async (dispatch) => {
-  
   dispatch(removeGLIngredient());
 };
 
-const initialState = {groceryList: []}
+const initialState = {}
 export default function groceryList(state = initialState, action) {
     switch (action.type) {
       case SET_GL_INGREDIENT:
-        state.groceryList.push(action.ingredient);
+        state[action.ingredient.id] = action.ingredient;
         return { ...state };
       case REMOVE_GL_INGREDIENT:
-        return { groceryList: [] };
+        return {} ;
       default:
         return state;
     }
