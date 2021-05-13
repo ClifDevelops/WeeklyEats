@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllMeals } from "../../store/meal";
+import { addMealIngredientsToGroceryList } from "../../store/grocerylist"
 import "./Meals.css";
 
 const Meals = () => {
@@ -23,8 +24,11 @@ const Meals = () => {
                     <div><NavLink to={`/meals/${meal.id}`}>{meal.name}</NavLink></div>
                     <div>{meal.cuisine}</div>
                     <div className='meal-recipe'>{meal.recipe}</div>
-                    <button>Add to Grocery List</button>
-                    <button>Add ingredients to meal</button>
+                    { meal.meal_ingredients.length ?
+                         <button onClick={() => dispatch(addMealIngredientsToGroceryList(meal.meal_ingredients))}>Add to Grocery List</button>
+                         : ""
+
+                        }
                   </div>
                 );
 

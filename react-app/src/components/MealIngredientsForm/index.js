@@ -12,7 +12,7 @@ const MealIngredientsForm = ({mealId}) => {
     const ingredients = useSelector((state) => state?.ingredient);
     
 
-    const [ingredient_id, setIngredient_id] = useState(1);
+    const [ingredient_id, setIngredient_id] = useState("");
     const [searchTerm, setSearchTerm] = useState("")
     // const [ingredient_quantity, setIngredient_quantity] = useState(1);
     // const [measurement_unit, setMeasurement_unit] = useState("each");
@@ -51,13 +51,14 @@ const MealIngredientsForm = ({mealId}) => {
               <label htmlFor="ingredient_id">Ingredient</label>
             </div>
             <div>
-              <input type="text" placeholder="Filter your options" onChange={(e) => {setSearchTerm(e.target.value)}} />
+              <input type="text" placeholder="Filter your options, select from dropdown" onChange={(e) => {setSearchTerm(e.target.value)}} />
             </div>
             <div>
               <select
                 name="ingredient_id"
                 value={ingredient_id}
                 onChange={(e) => setIngredient_id(e.target.value)}
+                required
               >
                 {Object.values(ingredients).filter((ingredient) => {
                   if (searchTerm === "") {
