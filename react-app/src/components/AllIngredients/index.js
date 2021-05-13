@@ -14,6 +14,7 @@ const AllIngredients = () => {
     }, [])
 
     const ingredients = useSelector(state => state?.ingredient)
+    const [searchTerm, setSearchTerm] = useState("");
     
     useEffect(() => { 
     }, [Object.values(ingredients).length]);
@@ -44,18 +45,49 @@ const AllIngredients = () => {
     }
     
     return (
-        <div className='all-ingredients-container'>
-            {Object.values(ingredients).map((ingredient) => {
-                return (
-                    <div key={ingredient.id} className='ingredient-individual-container'>
-                        <div>{ingredient.name}</div>
-                        <div>{ingredient.type}</div>
-                        <button className='ingredient-button' onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>
-                    </div>
-                )
+      <div>
+        <div>
+          <input
+            type="text"
+            placeholder="Filter your options"
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+            }}
+          />
+        </div>
+        <div className="all-ingredients-container">
+          {Object.values(ingredients)
+            .filter((ingredient) => {
+              if (searchTerm === "") {
+                return ingredient;
+              } else if (
+                ingredient?.name
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase())
+              ) {
+                return ingredient;
+              }
+            })
+            .map((ingredient) => {
+              return (
+                <div
+                  key={ingredient.id}
+                  className="ingredient-individual-container"
+                >
+                  <div>{ingredient.name}</div>
+                  <div>{ingredient.type}</div>
+                  <button
+                    className="ingredient-button"
+                    onClick={() => addToGroceryList(ingredient)}
+                  >
+                    Add to Grocery List
+                  </button>
+                </div>
+              );
             })}
         </div>
-    )
+      </div>
+    );
 }
 
 export default AllIngredients
