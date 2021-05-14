@@ -1,20 +1,61 @@
+.ingredients-page-grid {
+    display: grid;
+    grid-template-columns: 700px 400px;
+    height: 900px;
+}
+
 .all-ingredients-container {
-    width: 800px;
+    width: 700px;
+    /* height: 700px; */
+    grid-column: 1;
+    box-sizing: border-box;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    /* overflow-y: scroll; */
 }
 
 .ingredient-individual-container {
     display:flex;
-    border: 1px solid black;
+    flex-wrap: wrap;
+    border: 1px solid rgb(122, 100, 0);
     justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
     margin: 5px;
     padding: 5px;
     width: 400px;
+    height: 60px;
+    font-size: 18px;
+    border-radius: 2px;
+}
+.ingredient-individual-container:hover {
+    border: 2.2px solid black;
 }
 
 .ingredient-button {
-    background-color: #C6FFC1 !important;
+    background-color: #f8fbc5 !important;
+    height: 45px;
+    width: 100px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    box-shadow: 2px 2px 1px 0px black;
+}
+.ingredient-button:hover {
+    box-shadow: 2px 2px 2px 1px black;
+}
+
+.ingredients-search-input {
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+.ingredients-search-input:focus {
+    outline: 0;
+    border: 2px solid black;
 }

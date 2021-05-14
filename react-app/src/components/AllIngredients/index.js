@@ -4,6 +4,7 @@ import { NavLink, Redirect } from "react-router-dom";
 import { getAllIngredients } from "../../store/ingredient";
 import { addIngredientToGroceryList} from "../../store/grocerylist";
 import "./AllIngredients.css";
+import IngredientForm from "../IngredientForm";
 
 const AllIngredients = () => {
     const dispatch = useDispatch()
@@ -45,23 +46,26 @@ const AllIngredients = () => {
     }
     
     return (
-      <div>
-        <div>
+      <div className='ingredients-page-grid'>
+        
+        <div className="all-ingredients-container">
           <input
+            className='ingredients-search-input'
             type="text"
-            placeholder="Filter your options"
+            placeholder="Filter your ingredient options"
             onChange={(e) => {
               setSearchTerm(e.target.value);
             }}
           />
-        </div>
-        <div className="all-ingredients-container">
           {Object.values(ingredients)
             .filter((ingredient) => {
               if (searchTerm === "") {
                 return ingredient;
               } else if (
                 ingredient?.name
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase()) ||
+                ingredient?.type
                   .toLowerCase()
                   .includes(searchTerm.toLowerCase())
               ) {
@@ -86,6 +90,7 @@ const AllIngredients = () => {
               );
             })}
         </div>
+        <IngredientForm />
       </div>
     );
 }

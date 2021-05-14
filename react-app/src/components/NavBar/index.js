@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
+import Logo from '../../images/Yellow-Logo.png'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -13,11 +14,6 @@ const NavBar = () => {
           </NavLink>
         </div> */}
         <div>
-          <NavLink to="/homepage" exact={true} className="navbar-link">
-            Homepage
-          </NavLink>
-        </div>
-        <div>
           <NavLink to="/meals" exact={true} className="navbar-link">
             Meals
           </NavLink>
@@ -25,6 +21,11 @@ const NavBar = () => {
         <div>
           <NavLink to="/meals/create" exact={true} className="navbar-link">
             Add a Meal
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to="/homepage" exact={true} className="navbar-link">
+            <img className="navbar-logo-home" src={Logo} />
           </NavLink>
         </div>
         <div>

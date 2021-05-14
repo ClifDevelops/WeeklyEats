@@ -38,7 +38,8 @@ const IngredientForm = () => {
 
 
     return (
-      <div>
+      <div className='ingredient-form-container'>
+        <div className='ingredient-form-text'>Don't see what you're looking for? Add a new ingredient here.</div>
         <form onSubmit={onSubmit}>
           <div>
             <input
@@ -57,6 +58,8 @@ const IngredientForm = () => {
               <option value="grain">grain</option>
               <option value="protein">protein</option>
               <option value="vegetable">vegetable</option>
+              <option value="herb">herb</option>
+              <option value="spice">spice</option>
             </select>
           </div>
           <button type="submit">Enter Ingredient</button>

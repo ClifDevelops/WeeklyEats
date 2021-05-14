@@ -1,14 +1,16 @@
 .logout-button {
+    font-family: inherit;
     font-size: 22px;
-    background-color: #a7d0cd;
+    background-color: #f9faa6;
     border: none;
     border-radius: 6px;
     box-sizing: border-box;
-    padding: 4px;
+    padding: 2px;
+    padding-bottom: 4px;
     margin: 4px;
-    box-shadow: 2px 2px black;
+    box-shadow: 2px 2px rgb(158, 125, 53);
 }
 .logout-button:hover {
-    box-shadow: 3px 3px black;
+    box-shadow: 4px 3px 1px rgb(158, 125, 53);
     margin: 5px;
 }

@@ -34,37 +34,44 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      {/* <NavBar /> */}
 
       <Switch>
         <ProtectedRoute path="/ingredients/create" exact={true}>
+          <NavBar />
           <IngredientForm />
         </ProtectedRoute>
         <ProtectedRoute path="/ingredients" exact={true}>
+          <NavBar />
           <AllIngredients />
         </ProtectedRoute>
         <ProtectedRoute path="/meals/create" exact={true}>
+          <NavBar />
           <MealForm />
         </ProtectedRoute>
         <ProtectedRoute path="/meals" exact={true}>
+          <NavBar />
           <Meals />
         </ProtectedRoute>
         <ProtectedRoute path="/meals/:mealId" exact={true}>
+          <NavBar />
           <MealDisplay />
         </ProtectedRoute>
         <ProtectedRoute path="/meals/:mealId/edit" exact={true}>
+          <NavBar />
           <EditMealForm />
         </ProtectedRoute>
-        <Route path="/login" exact={true}>
+        {/* <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
-        </Route>
+        </Route> */}
         <Route path="/" exact={true}>
           <Splash />
         </Route>
         <ProtectedRoute path="/homepage" exact={true}>
+          <NavBar />
           <Homepage />
         </ProtectedRoute>
       </Switch>

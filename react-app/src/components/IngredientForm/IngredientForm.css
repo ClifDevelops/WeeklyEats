@@ -1,0 +1,10 @@
+.ingredient-form-container {
+    grid-column: 2;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+.ingredient-form-text {
+    font-size: 24px;
+    
+}
