@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useParams, useHistory } from "react-router-dom";
 import { editMeal } from "../../store/meal";
-import "./EditMealForm.css";
+import "../MealForm/MealForm.css";
 
 const EditMealForm = () => {
   const dispatch = useDispatch();
