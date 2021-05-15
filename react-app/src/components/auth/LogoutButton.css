@@ -12,5 +12,5 @@
 }
 .logout-button:hover {
     box-shadow: 4px 3px 1px rgb(158, 125, 53);
-    margin: 5px;
+    margin-right: 1px;
 }

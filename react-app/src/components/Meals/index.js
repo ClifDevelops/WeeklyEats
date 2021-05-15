@@ -21,11 +21,11 @@ const Meals = () => {
                 return (
                   <div key={meal.id} className="meal-individual-card">
                       {/* {console.log(meal.id)} */}
-                    <div><NavLink to={`/meals/${meal.id}`}>{meal.name}</NavLink></div>
-                    <div>{meal.cuisine}</div>
-                    <div className='meal-recipe'>{meal.recipe}</div>
+                    <div><NavLink to={`/meals/${meal.id}`} className='meal-navlink'>{meal.name}</NavLink></div>
+                    <div className='meal-card-cuisine'>{meal.cuisine}</div>
+                    {/* <div className='meal-recipe'>{meal.recipe}</div> */}
                     { meal.meal_ingredients.length ?
-                         <button onClick={() => dispatch(addMealIngredientsToGroceryList(meal.meal_ingredients))}>Add to Grocery List</button>
+                         <button className='meal-card-button' onClick={() => dispatch(addMealIngredientsToGroceryList(meal.meal_ingredients))}>Add to Grocery List</button>
                          : ""
 
                         }

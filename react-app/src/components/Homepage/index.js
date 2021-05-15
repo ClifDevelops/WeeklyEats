@@ -21,7 +21,9 @@ const Homepage = () => {
                 {/* <MealForm /> */}
                 <Meals />
             </div>
-            <div className='gl-container'><GroceryList /></div>
+            <div className='gl-container'>
+                <GroceryList />
+            </div>
         </div>
     )
 }

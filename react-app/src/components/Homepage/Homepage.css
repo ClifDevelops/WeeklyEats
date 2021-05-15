@@ -1,17 +1,17 @@
 .homepage-container {
     display: grid;
-    grid-template-columns: 600px 250px;
-    height: 200px;
+    grid-template-columns: 700px 400px;
+    /* height: 200px; */
 }
 
 .main-container {
-    border: 1px solid black;
     box-sizing: border-box;
+    border: 1px solid rgb(122, 100, 0);
     margin: 10px;
 }
 
 .gl-container {
-    border: 1px solid black;
+    border: 1px solid rgb(122, 100, 0);
     box-sizing: border-box;
     margin: 10px;
 }

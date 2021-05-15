@@ -3,7 +3,7 @@
     justify-content: space-evenly;
     align-items: center;
     height: 10vh;
-    border-bottom: 4px solid black;
+    border-bottom: 2.2px solid rgb(122, 100, 0);
     box-sizing: border-box;
     padding: 5px;
     font-size: 18px;
@@ -11,7 +11,7 @@
 
 .navbar-link {
     text-decoration: none;
-    color: #60ddd7;
+    color: #6aabc5;
     box-sizing: border-box;
     margin: 10px;
 }

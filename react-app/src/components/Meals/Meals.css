@@ -4,14 +4,55 @@
     align-items: center;
     overflow-y: scroll;
     height: 700px;
+    box-sizing: border-box;
+    padding: 8px;
 }
 
 .meal-individual-card {
+    background-image: url('../../images/dark-texture-background.jpeg');
+    background-size: contain;
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 600px;
+    height: 130px;
     box-sizing: border-box;
-    margin: 15px;
+    margin: 2px;
     padding: 5px;
-    border: 3px solid black;
+    border: 3px solid rgb(43, 47, 61);
+}
+
+.meal-navlink {
+    text-decoration: none;
+    color: #cadee6;
+    box-sizing: border-box;
+    font-size: 2.6em;
+}
+
+.meal-navlink:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.meal-card-cuisine {
+    font-size: 22px;
+}
+
+.meal-card-button {
+    width: 105px;
+    position: relative;
+    left: 440px;
+    bottom: 60px;
+    font-family: inherit;
+    font-size: 15px;
+    background-color: #f9faa6;
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 2px;
+    padding-bottom: 4px;
+    box-shadow: 2px 2px rgb(158, 125, 53);
+}
+.meal-card-button:hover {
+    box-shadow: 3px 3px 1px rgb(158, 125, 53);
+    /* margin: 5px; */
 }
