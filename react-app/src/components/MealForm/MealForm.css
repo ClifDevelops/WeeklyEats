@@ -30,7 +30,8 @@
     text-align: center;
     font-size: 30px;
     border-radius: 4px;
-    background-color:palegoldenrod;
+    border: 3.3px solid rgb(70, 68, 51);
+    background-color:rgb(231, 228, 199);
 }
 .meal-form-input:focus {
     outline: 0;
@@ -42,7 +43,8 @@
     text-align: center;
     font-size: 30px;
     border-radius: 4px;
-    background-color:palegoldenrod;
+    border: 3.3px solid rgb(70, 68, 51);
+    background-color:rgb(231, 228, 199);
 }
 .meal-form-select:focus {
     outline: 0;
@@ -54,9 +56,10 @@
     text-align: left;
     font-size: 30px;
     border-radius: 4px;
+    border: 3.3px solid rgb(70, 68, 51);
     width: 600px;
     height: 300px;
-    background-color:palegoldenrod;
+    background-color:rgb(231, 228, 199);
 }
 .meal-form-textarea:focus {
     outline: 0;
@@ -68,7 +71,7 @@
     text-align: left;
     font-size: 30px;
     border-radius: 4px;
-    background-color:palegoldenrod;
+    background-color:rgb(231, 228, 199);
     box-sizing: border-box;
     margin-top: 15px;
 }

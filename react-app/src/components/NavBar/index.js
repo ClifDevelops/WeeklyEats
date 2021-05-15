@@ -14,6 +14,11 @@ const NavBar = () => {
           </NavLink>
         </div> */}
         <div>
+          <NavLink to="/homepage" exact={true} className="navbar-link">
+            <img className="navbar-logo-home" src={Logo} />
+          </NavLink>
+        </div>
+        <div>
           <NavLink to="/meals" exact={true} className="navbar-link">
             Meals
           </NavLink>
@@ -24,16 +29,11 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div>
-          <NavLink to="/homepage" exact={true} className="navbar-link">
-            <img className="navbar-logo-home" src={Logo} />
-          </NavLink>
-        </div>
-        <div>
           <NavLink to="/ingredients" exact={true} className="navbar-link">
             Ingredients
           </NavLink>
         </div>
-        <div>
+        {/* <div>
           <NavLink
             to="/ingredients/create"
             exact={true}
@@ -41,7 +41,7 @@ const NavBar = () => {
           >
             Add an Ingredient
           </NavLink>
-        </div>
+        </div> */}
 
         <div>
           <LogoutButton />
