@@ -56,7 +56,7 @@ export default function ingredient(state = initialState, action) {
             action.ingredients.ingredients.forEach((ingredient) => {
                 state[ingredient.id] = ingredient
             })
-            console.log('here is state inside of get', state)
+            // console.log('here is state inside of get', state)
             return state;
         case REMOVE_INGREDIENTS:
             return {}

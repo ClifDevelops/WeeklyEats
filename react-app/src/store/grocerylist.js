@@ -1,4 +1,5 @@
 const SET_GL_INGREDIENT = "ingredient/SET_GL_INGREDIENT";
+const UNSET_GL_INGREDIENT = "ingredient/UNSET_GL_INGREDIENT";
 const REMOVE_GL_INGREDIENT = "ingredient/REMOVE_GL_INGREDIENT";
 const SET_MEAL_GL_INGREDIENT = "ingredient/SET_MEAL_GL_INGREDIENT";
 
@@ -7,8 +8,13 @@ const setGLIngredient = (ingredient) => ({
   ingredient,
 });
 
+const unsetGLIngredient = (ingredient) => ({
+  type: UNSET_GL_INGREDIENT,
+  ingredient,
+});
+
 const removeGLIngredient = () => ({
-  type: REMOVE_GL_INGREDIENT,
+  type: REMOVE_GL_INGREDIENT
 });
 
 const setMealGLIngredient = (mealIngredients) => ({
@@ -19,6 +25,10 @@ const setMealGLIngredient = (mealIngredients) => ({
 export const addIngredientToGroceryList = (ingredient) => async (dispatch) => {
   dispatch(setGLIngredient(ingredient))
 }
+
+export const removeIngredientFromGroceryList = (ingredient) => async (dispatch) => {
+  dispatch(unsetGLIngredient(ingredient));
+};
 
 export const logoutGL = () => async (dispatch) => {
   dispatch(removeGLIngredient());
@@ -34,16 +44,22 @@ export default function groceryList(state = initialState, action) {
       case SET_GL_INGREDIENT:
         state[action.ingredient.id] = action.ingredient;
         return { ...state };
+      case UNSET_GL_INGREDIENT:
+        delete state[action.ingredient.id] 
+        return { ...state };
       case REMOVE_GL_INGREDIENT:
-        return {} ;
+        return {};
       case SET_MEAL_GL_INGREDIENT:
-        console.log("HERE ARE THE MEAL INGREDIENTS", action.mealIngredients)
-        console.log("HERE IS THE INGREDIENT NAME", action.mealIngredients[0].ingredient.name)
-        console.log(state)
+        console.log("HERE ARE THE MEAL INGREDIENTS", action.mealIngredients);
+        console.log(
+          "HERE IS THE INGREDIENT NAME",
+          action.mealIngredients[0].ingredient.name
+        );
+        console.log(state);
         action.mealIngredients.forEach((ingredient) => {
-          state[ingredient.ingredient.id] = ingredient.ingredient
-        })
-        return {...state }
+          state[ingredient.ingredient.id] = ingredient.ingredient;
+        });
+        return { ...state };
       default:
         return state;
     }
