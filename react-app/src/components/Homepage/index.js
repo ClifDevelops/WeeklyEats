@@ -18,7 +18,10 @@ const Homepage = () => {
     return (
         <div className='homepage-container'>
             <div className='main-container'>
-                {/* <MealForm /> */}
+                <div className='homepage-meals-text'>
+                    {`Pick from the meals below to add to your grocery list!
+                    (If you don't see the "add to grocery list" button, click into the meal and attach some ingredients.)`}
+                </div>
                 <Meals />
             </div>
             <div className='gl-container'>

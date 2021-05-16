@@ -3,23 +3,32 @@
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box;
-    /* margin-left: 50px; */
+    margin-top: 20px;
     padding-top: 20px;
-    width: 400px;
+    padding-bottom: 20px;
+    width: 300px;
+    height: 600px;
+    overflow-y: scroll;
     border: 1px solid rgb(122, 100, 0);
+    border-radius: 2px;
 }
 .grocery-list-title {
     font-size: 30px;
     box-sizing: border-box;
-    margin: 15px;
+    margin-left: 30px;
+    margin-bottom: 20px;
 }
 
 .gl-individual-item-container {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    width: 250px;
+    /* flex-direction: row; */
+    /* align-items: space-between; */
+    justify-content: space-between;
 }
 .gl-individual-item-name {
     font-size: 20px;
+    box-sizing: border-box;
+    margin-left: 18px;
+    margin-right: 18px;
 }
