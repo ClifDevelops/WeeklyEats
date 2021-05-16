@@ -5,6 +5,7 @@
 
 .auth-form-input {
     font-size: 18px;
+    font-family: inherit;
     box-sizing: border-box;
     margin-top: 6px;
     border-radius: 6px;
@@ -22,12 +23,13 @@
     width: 140px;
     border-radius: 10px;
     font-size: 16px;
+    font-family: inherit;
     text-align: center;
     border: none;
     box-shadow: 2px 2px 1px 0px rgb(179, 136, 81);
     box-sizing: border-box;
     margin-top: 8px;
-    margin-left: 24px;
+    margin-left: 36px;
 }
 .auth-form-button:hover {
     box-shadow: 2px 2px 2px 1px rgb(179, 136, 81);
@@ -36,16 +38,18 @@
 
 .demo-user-button {
     background-color: #c1d5e0 !important;
-    height: 50px;
-    width: 160px;
+    height: 60px;
+    width: 164px;
     border-radius: 10px;
     font-size: 18px;
+    font-family: inherit;
     text-align: center;
     border: none;
     box-shadow: 2px 2px 1px 0px rgb(179, 136, 81);
     box-sizing: border-box;
     margin-top: 30px;
-    margin-left: 16px;
+    margin-left: 26px;
+    padding: 5px;
 }
 .demo-user-button:hover {
     box-shadow: 2px 2px 2px 1px rgb(179, 136, 81);
