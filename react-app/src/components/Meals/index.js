@@ -14,29 +14,32 @@ const Meals = () => {
         dispatch(getAllMeals())
     }, []);
 
-
-    return (
-        <div className='all-meals-container'>
-            {Object.values(meals).map((meal) => {
-                return (
-                  <div key={meal.id} className="meal-individual-card">
-                      {/* {console.log(meal.id)} */}
-                    <div><NavLink to={`/meals/${meal.id}`} className='meal-navlink'>{meal.name}</NavLink></div>
-                    <div className='meal-card-cuisine'>{meal.cuisine}</div>
-                    {/* <div className='meal-recipe'>{meal.recipe}</div> */}
-                    { meal.meal_ingredients.length ?
-                         <button className='meal-card-button' onClick={() => dispatch(addMealIngredientsToGroceryList(meal.meal_ingredients))}>Add to Grocery List</button>
-                         : ""
-
-                        }
-                  </div>
-                );
-
-
-                })}
-             
-        </div>
-    )
+    if (Object.values(meals).length){
+        return (
+            <div className='all-meals-container'>
+                {Object.values(meals).map((meal) => {
+                    return (
+                    <div key={meal.id} className="meal-individual-card">
+                        {/* {console.log(meal.id)} */}
+                        <div><NavLink to={`/meals/${meal.id}`} className='meal-navlink'>{meal.name}</NavLink></div>
+                        <div className='meal-card-cuisine'>{meal.cuisine}</div>
+                        {/* <div className='meal-recipe'>{meal.recipe}</div> */}
+                        { meal.meal_ingredients.length ?
+                            <button className='meal-card-button' onClick={() => dispatch(addMealIngredientsToGroceryList(meal.meal_ingredients))}>Add to Grocery List</button>
+                            : ""
+                            }
+                    </div>
+                    );
+                    })} 
+            </div>
+            
+        )} else {
+            return (
+                <div className='no-meals-to-display-text-container'>
+                    Haven't added a meal yet? Get started <NavLink className='no-meals-to-display-link' to='/meals/create'>here!</NavLink>
+                </div>
+            )
+        }
 }
 
 export default Meals

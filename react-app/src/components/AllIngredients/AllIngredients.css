@@ -1,6 +1,6 @@
 .ingredients-page-grid {
     display: grid;
-    grid-template-columns: 700px 400px;
+    grid-template-columns: 600px 600px;
     height: 900px;
 }
 
@@ -58,4 +58,10 @@
 .ingredients-search-input:focus {
     outline: 0;
     border: 2px solid black;
+}
+
+.ingredients-page-right-side-container {
+    grid-column: 2;
+    display: flex;
+
 }

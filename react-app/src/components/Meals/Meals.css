@@ -56,3 +56,19 @@
     box-shadow: 3px 3px 1px rgb(158, 125, 53);
     /* margin: 5px; */
 }
+
+
+
+.no-meals-to-display-text-container {
+    font-size: 30px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.no-meals-to-display-link {
+    color: #6aabc5;
+}
+.no-meals-to-display-link:hover {
+    text-decoration: underline;
+    font-weight: 600;
+}

@@ -12,11 +12,11 @@ const GroceryList = () => {
 
     return (
         <div className='grocery-list-container'>
-            <div>GROCERY LIST</div>
+            <div className='grocery-list-title'>GROCERY LIST</div>
             {Object.values(list).map((item) => {
                 return (
-                  <div key={item.id}>
-                    <div>{item.name}</div>
+                  <div className='gl-individual-item-container' key={item.id}>
+                    <div className='gl-individual-item-name'>{item.name}</div>
                     <div>
                       <button onClick={() => dispatch(removeIngredientFromGroceryList(item))}>Remove</button>
                     </div>

@@ -5,6 +5,7 @@ import { getAllIngredients } from "../../store/ingredient";
 import { addIngredientToGroceryList} from "../../store/grocerylist";
 import "./AllIngredients.css";
 import IngredientForm from "../IngredientForm";
+import GroceryList from "../GroceryList";
 
 const AllIngredients = () => {
     const dispatch = useDispatch()
@@ -90,7 +91,10 @@ const AllIngredients = () => {
               );
             })}
         </div>
-        <IngredientForm />
+        <div className='ingredients-page-right-side-container'>
+          <IngredientForm />
+          <GroceryList />
+        </div>
       </div>
     );
 }

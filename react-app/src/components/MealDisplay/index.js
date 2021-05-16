@@ -7,6 +7,7 @@ import { deleteFromGroceryList, addToGroceryList } from "../../store/grocerylist
 import { getAllIngredients } from "../../store/ingredient";
 import MealIngredientsForm from "../MealIngredientsForm";
 import './MealDisplay.css'
+import IngredientForm from "../IngredientForm";
 
 const MealDisplay = () => {
     const dispatch = useDispatch();
@@ -48,6 +49,7 @@ const MealDisplay = () => {
                     <div>{ingredient.ingredient.name}</div>
                 )})}</div>
             <MealIngredientsForm mealId={mealId} />
+            <IngredientForm />
           </div>
         </div>
       </div>
