@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import  { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { login } from "../../store/session";
+import './AuthForms.css'
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -41,35 +42,46 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <div className="auth-form">
+    <form  onSubmit={onLogin}>
       <div>
         {errors.map((error) => (
           <div>{error}</div>
         ))}
       </div>
       <div>
-        <label htmlFor="email">Email</label>
         <input
           name="email"
           type="text"
           placeholder="Email"
           value={email}
           onChange={updateEmail}
+          className="auth-form-input"
         />
       </div>
       <div>
-        <label htmlFor="password">Password</label>
         <input
           name="password"
           type="password"
           placeholder="Password"
           value={password}
           onChange={updatePassword}
+          className="auth-form-input"
         />
-        <button type="submit">Login</button>
-        <button onClick={demoLogin}> Or try as a Demo User!</button>
+        <div>
+        <button type="submit" className="auth-form-button">
+          Login
+        </button>
+        </div>
+        <div>
+        <button onClick={demoLogin} className="demo-user-button">
+          {" "}
+          Or try as a Demo User!
+        </button>
+        </div>
       </div>
     </form>
+    </div>
   );
 };
 
