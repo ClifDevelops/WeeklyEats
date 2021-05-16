@@ -50,10 +50,16 @@ const IngredientForm = () => {
               onChange={updateName}
               value={name}
               placeholder="Ingredient Name"
+              className="ingredient-form-input"
             ></input>
           </div>
           <div>
-            <select name="type" onChange={updateType} value={type}>
+            <select
+              name="type"
+              onChange={updateType}
+              value={type}
+              className="ingredient-form-input"
+            >
               <option value="dairy">dairy</option>
               <option value="fat">fat</option>
               <option value="fruit">fruit</option>
@@ -65,7 +71,7 @@ const IngredientForm = () => {
               <option value="pantry staple">pantry staple</option>
             </select>
           </div>
-          <button type="submit">Enter Ingredient</button>
+          <button type="submit" className='ingredient-form-button'>Enter Ingredient</button>
         </form>
         {/* <AllIngredients /> */}
       </div>

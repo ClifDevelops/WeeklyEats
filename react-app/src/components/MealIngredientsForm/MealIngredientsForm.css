@@ -1,0 +1,28 @@
+.meal-ingredient-form-input {
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid black;
+    height: 30px;
+}
+.meal-ingredient-form-input:focus {
+    outline: 0;
+    border: 2px solid black;
+}
+
+.meal-ingredient-form-button {
+    background-color: #f8fbc5 !important;
+    height: 40px;
+    width: 140px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    box-shadow: 2px 2px 1px 0px black;
+    box-sizing: border-box;
+    margin-top: 8px;
+}
+.meal-ingredient-form-button:hover {
+    box-shadow: 2px 2px 2px 1px black;
+}

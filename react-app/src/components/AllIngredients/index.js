@@ -92,8 +92,10 @@ const AllIngredients = () => {
             })}
         </div>
         <div className='ingredients-page-right-side-container'>
-          <IngredientForm />
           <GroceryList />
+        </div>
+        <div className='ingredients-page-ingredient-form-container'>
+          <IngredientForm />
         </div>
       </div>
     );

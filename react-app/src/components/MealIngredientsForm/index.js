@@ -44,14 +44,21 @@ const MealIngredientsForm = ({mealId}) => {
      };
     if (ingredients) {
     return (
-      <div className='meal-ingredient-form-container'>
+      <div className="meal-ingredient-form-container">
         <form onSubmit={onSubmit}>
           <div>
             <div>
-              <label htmlFor="ingredient_id">Ingredient</label>
+              
             </div>
             <div>
-              <input type="text" placeholder="Filter your options, select from dropdown" onChange={(e) => {setSearchTerm(e.target.value)}} />
+              <input
+                type="text"
+                className="meal-ingredient-form-input"
+                placeholder="Filter your options, select from dropdown"
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                }}
+              />
             </div>
             <div>
               <select
@@ -59,18 +66,28 @@ const MealIngredientsForm = ({mealId}) => {
                 value={ingredient_id}
                 onChange={(e) => setIngredient_id(e.target.value)}
                 required
+                className="meal-ingredient-form-input"
               >
-                {Object.values(ingredients).filter((ingredient) => {
-                  if (searchTerm === "") {
-                    return ingredient
-                  } else if (ingredient?.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                    return ingredient
-                  } 
-                }).map((ingredient) => {
-                  return (
-                    <option value={ingredient?.id}>{ingredient?.name}</option>
-                  );
-                })}
+                {Object.values(ingredients)
+                  .filter((ingredient) => {
+                    if (searchTerm === "") {
+                      return ingredient;
+                    } else if (
+                      ingredient?.name
+                        .toLowerCase()
+                        .includes(searchTerm.toLowerCase()) ||
+                      ingredient?.type
+                        .toLowerCase()
+                        .includes(searchTerm.toLowerCase())
+                    ) {
+                      return ingredient;
+                    }
+                  })
+                  .map((ingredient) => {
+                    return (
+                      <option value={ingredient?.id}>{ingredient?.name}</option>
+                    );
+                  })}
               </select>
             </div>
             {/* <div>
@@ -111,7 +128,7 @@ const MealIngredientsForm = ({mealId}) => {
               </select>
             </div> */}
           </div>
-          <button type="submit">Add to Meal</button>
+          <button className='meal-ingredient-form-button' type="submit">Add to Meal</button>
         </form>
       </div>
     );
