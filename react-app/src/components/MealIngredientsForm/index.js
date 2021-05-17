@@ -21,9 +21,22 @@ const MealIngredientsForm = ({mealId}) => {
       dispatch(getAllIngredients());
     }, []);
 
+    // useEffect(() => {
+    //     console.log('-----------');
+    //     console.log('searchTerm :: ', searchTerm);
+    //     console.log('ingredient_id OLD:: ', ingredient_id)
+    
+    //     // every time search term changes (so in a useEffect that rerenders off of searchTerm)
+    //     // the value of the selectbox should be the first item in the collection
+    //     // of filtered results
+    //     // eg setIngredient_id(filteredResults[0])
+
+    // }, [searchTerm])
+
     const printMe = (e) => {
       console.log(e)
     }
+
     // const updateMeasurementUnit = (e) => {
     //    setMeasurement_unit(e.target.value);
     // };
@@ -47,9 +60,7 @@ const MealIngredientsForm = ({mealId}) => {
       <div className="meal-ingredient-form-container">
         <form onSubmit={onSubmit}>
           <div>
-            <div>
-              
-            </div>
+            <div></div>
             <div>
               <input
                 type="text"
@@ -128,7 +139,9 @@ const MealIngredientsForm = ({mealId}) => {
               </select>
             </div> */}
           </div>
-          <button className='meal-ingredient-form-button' type="submit">Add to Meal</button>
+          <button className="meal-ingredient-form-button" type="submit">
+            Add to Meal
+          </button>
         </form>
       </div>
     );

@@ -18,7 +18,7 @@ const GroceryList = () => {
                   <div className='gl-individual-item-container' key={item.id}>
                     <div className='gl-individual-item-name'>{item.name}</div>
                     <div>
-                      <button onClick={() => dispatch(removeIngredientFromGroceryList(item))}>Remove</button>
+                      <button className='gl-remove-button' onClick={() => dispatch(removeIngredientFromGroceryList(item))}>Remove</button>
                     </div>
                   </div>
                 );

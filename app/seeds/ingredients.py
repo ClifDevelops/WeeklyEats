@@ -294,6 +294,10 @@ def seed_ingredients():
         name='tarragon', type='herb')
     ingredient141 = Ingredient(
         name='bay leaf', type='herb')
+
+    ingredient142 = Ingredient(
+        name='burger buns', type='grain'
+    )
     
 
     
@@ -438,6 +442,7 @@ def seed_ingredients():
     db.session.add(ingredient139)
     db.session.add(ingredient140)
     db.session.add(ingredient141)
+    db.session.add(ingredient142)
 
     db.session.commit()
 
@@ -447,13 +452,36 @@ def undo_ingredients():
     
 
 def seed_meal_ingredients():
-    return
-    # one = MealIngredient(meal_id=1, ingredient_id=1, ingredient_quantity=0.5)
+    meal_ingredient1 = MealIngredient(meal_id=3, ingredient_id=32)
+    meal_ingredient2 = MealIngredient(meal_id=3, ingredient_id=33)
+    meal_ingredient3 = MealIngredient(meal_id=3, ingredient_id=44)
+    meal_ingredient4 = MealIngredient(meal_id=3, ingredient_id=62)
+    meal_ingredient5 = MealIngredient(meal_id=3, ingredient_id=72)
+    meal_ingredient6 = MealIngredient(meal_id=3, ingredient_id=73)
+    meal_ingredient7 = MealIngredient(meal_id=3, ingredient_id=74)
+    meal_ingredient8 = MealIngredient(meal_id=3, ingredient_id=75)
+    meal_ingredient9 = MealIngredient(meal_id=3, ingredient_id=78)
+    meal_ingredient10 = MealIngredient(meal_id=3, ingredient_id=117)
+    meal_ingredient11 = MealIngredient(meal_id=3, ingredient_id=127)
+    meal_ingredient12 = MealIngredient(meal_id=3, ingredient_id=142)
+    
+    db.session.add(meal_ingredient1)
+    db.session.add(meal_ingredient2)
+    db.session.add(meal_ingredient3)
+    db.session.add(meal_ingredient4)
+    db.session.add(meal_ingredient5)
+    db.session.add(meal_ingredient6)
+    db.session.add(meal_ingredient7)
+    db.session.add(meal_ingredient8)
+    db.session.add(meal_ingredient9)
+    db.session.add(meal_ingredient10)
+    db.session.add(meal_ingredient11)
+    db.session.add(meal_ingredient12)
 
-    # db.session.add(one)
 
-    # db.session.commit()
+    db.session.commit()
 
 
 def undo_meal_ingredients():
-    return
+    db.session.execute('TRUNCATE meal_ingredients RESTART IDENTITY CASCADE;')
+    db.session.commit()

@@ -1,6 +1,6 @@
 .homepage-container {
     display: grid;
-    grid-template-columns: 700px 200px 400px;
+    grid-template-columns: 800px 240px 400px;
     /* height: 200px; */
 }
 
@@ -9,6 +9,7 @@
     box-sizing: border-box;
     /* border: 1px solid rgb(122, 100, 0); */
     margin: 10px;
+    margin-left: 100px
 }
 
 .homepage-meals-text {

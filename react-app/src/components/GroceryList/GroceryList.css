@@ -32,3 +32,19 @@
     margin-left: 18px;
     margin-right: 18px;
 }
+
+.gl-remove-button {
+    background-color: #f8fbc5 !important;
+    height: 24px;
+    width: 60px;
+    border-radius: 7px;
+    font-size: 12px;
+    text-align: center;
+    border: none;
+    box-shadow: 2px 2px rgb(158, 125, 53);
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+.gl-remove-button:hover {
+    box-shadow: 3px 3px 1px rgb(158, 125, 53);
+}
