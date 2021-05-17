@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
-    height: 700px;
+    height: 80vh;
     box-sizing: border-box;
     padding: 8px;
 }
