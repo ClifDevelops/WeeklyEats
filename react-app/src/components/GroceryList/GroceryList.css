@@ -6,7 +6,7 @@
     margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 300px;
+    width: 330px;
     height: 600px;
     overflow-y: scroll;
     border: 1px solid rgb(122, 100, 0);
@@ -21,13 +21,13 @@
 
 .gl-individual-item-container {
     display: flex;
-    width: 250px;
+    width: 290px;
     /* flex-direction: row; */
     /* align-items: space-between; */
     justify-content: space-between;
 }
 .gl-individual-item-name {
-    font-size: 20px;
+    font-size: 18px;
     box-sizing: border-box;
     margin-left: 18px;
     margin-right: 18px;

@@ -296,8 +296,13 @@ def seed_ingredients():
         name='bay leaf', type='herb')
 
     ingredient142 = Ingredient(
-        name='burger buns', type='grain'
-    )
+        name='burger buns', type='grain')
+    ingredient143 = Ingredient(
+        name='garlic', type='vegetable')
+    ingredient144 = Ingredient(
+        name='tomato sauce', type='pantry staple')
+    ingredient145 = Ingredient(
+        name='tomato paste', type='pantry staple')
     
 
     
@@ -443,6 +448,9 @@ def seed_ingredients():
     db.session.add(ingredient140)
     db.session.add(ingredient141)
     db.session.add(ingredient142)
+    db.session.add(ingredient143)
+    db.session.add(ingredient144)
+    db.session.add(ingredient145)
 
     db.session.commit()
 
@@ -464,6 +472,42 @@ def seed_meal_ingredients():
     meal_ingredient10 = MealIngredient(meal_id=3, ingredient_id=117)
     meal_ingredient11 = MealIngredient(meal_id=3, ingredient_id=127)
     meal_ingredient12 = MealIngredient(meal_id=3, ingredient_id=142)
+
+    meal_ingredient13 = MealIngredient(meal_id=2, ingredient_id=41)
+    meal_ingredient14 = MealIngredient(meal_id=2, ingredient_id=59)
+    meal_ingredient15 = MealIngredient(meal_id=2, ingredient_id=61)
+    meal_ingredient16 = MealIngredient(meal_id=2, ingredient_id=64)
+    meal_ingredient17 = MealIngredient(meal_id=2, ingredient_id=67)
+    meal_ingredient18 = MealIngredient(meal_id=2, ingredient_id=103)
+    meal_ingredient19 = MealIngredient(meal_id=2, ingredient_id=117)
+    meal_ingredient20 = MealIngredient(meal_id=2, ingredient_id=118)
+    meal_ingredient21 = MealIngredient(meal_id=2, ingredient_id=138)
+
+    meal_ingredient22 = MealIngredient(meal_id=4, ingredient_id=43)
+    meal_ingredient23 = MealIngredient(meal_id=4, ingredient_id=104)
+    meal_ingredient24 = MealIngredient(meal_id=4, ingredient_id=13)
+    meal_ingredient25 = MealIngredient(meal_id=4, ingredient_id=133)
+    meal_ingredient26 = MealIngredient(meal_id=4, ingredient_id=123)
+    meal_ingredient27 = MealIngredient(meal_id=4, ingredient_id=132)
+    meal_ingredient28 = MealIngredient(meal_id=4, ingredient_id=143)
+    meal_ingredient29 = MealIngredient(meal_id=4, ingredient_id=117)
+    meal_ingredient30 = MealIngredient(meal_id=4, ingredient_id=59)
+    meal_ingredient31 = MealIngredient(meal_id=4, ingredient_id=61)
+
+    meal_ingredient32 = MealIngredient(meal_id=1, ingredient_id=33)
+    meal_ingredient33 = MealIngredient(meal_id=1, ingredient_id=44)
+    meal_ingredient34 = MealIngredient(meal_id=1, ingredient_id=62)
+    meal_ingredient35 = MealIngredient(meal_id=1, ingredient_id=87)
+    meal_ingredient36 = MealIngredient(meal_id=1, ingredient_id=104)
+    meal_ingredient37 = MealIngredient(meal_id=1, ingredient_id=118)
+    meal_ingredient38 = MealIngredient(meal_id=1, ingredient_id=127)
+    meal_ingredient39 = MealIngredient(meal_id=1, ingredient_id=132)
+    meal_ingredient40 = MealIngredient(meal_id=1, ingredient_id=137)
+    meal_ingredient41 = MealIngredient(meal_id=1, ingredient_id=143)
+    meal_ingredient42 = MealIngredient(meal_id=1, ingredient_id=144)
+    meal_ingredient43 = MealIngredient(meal_id=1, ingredient_id=145)
+
+    
     
     db.session.add(meal_ingredient1)
     db.session.add(meal_ingredient2)
@@ -477,6 +521,38 @@ def seed_meal_ingredients():
     db.session.add(meal_ingredient10)
     db.session.add(meal_ingredient11)
     db.session.add(meal_ingredient12)
+    db.session.add(meal_ingredient13)
+    db.session.add(meal_ingredient14)
+    db.session.add(meal_ingredient15)
+    db.session.add(meal_ingredient16)
+    db.session.add(meal_ingredient17)
+    db.session.add(meal_ingredient18)
+    db.session.add(meal_ingredient19)
+    db.session.add(meal_ingredient20)
+    db.session.add(meal_ingredient21)
+    db.session.add(meal_ingredient22)
+    db.session.add(meal_ingredient23)
+    db.session.add(meal_ingredient24)
+    db.session.add(meal_ingredient25)
+    db.session.add(meal_ingredient26)
+    db.session.add(meal_ingredient27)
+    db.session.add(meal_ingredient28)
+    db.session.add(meal_ingredient29)
+    db.session.add(meal_ingredient30)
+    db.session.add(meal_ingredient31)
+    db.session.add(meal_ingredient32)
+    db.session.add(meal_ingredient33)
+    db.session.add(meal_ingredient34)
+    db.session.add(meal_ingredient35)
+    db.session.add(meal_ingredient36)
+    db.session.add(meal_ingredient37)
+    db.session.add(meal_ingredient38)
+    db.session.add(meal_ingredient39)
+    db.session.add(meal_ingredient40)
+    db.session.add(meal_ingredient41)
+    db.session.add(meal_ingredient42)
+    db.session.add(meal_ingredient43)
+
 
 
     db.session.commit()
