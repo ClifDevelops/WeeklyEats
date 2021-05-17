@@ -1,6 +1,8 @@
 .splash-container {
     /* background-image: url('../../images/cooking-image-3.jpeg'); */
     background-size: cover;
+    box-sizing: border-box;
+    margin-bottom: 10vh;
     height: 970px;
     display: grid;
     grid-template-columns: 1fr 800px 1fr;

@@ -2,7 +2,7 @@
     width: 100%;
     background-color: #fdf6f6 ;
     color: black;
-    position: -webkit-sticky;
+    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: space-around;

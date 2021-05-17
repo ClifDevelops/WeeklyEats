@@ -10,6 +10,7 @@
     grid-column: 2;
     box-sizing: border-box;
     margin-top: 15px;
+    margin-bottom: 10vh;
     display: flex;
     flex-wrap: wrap;
     /* flex-direction: column;
