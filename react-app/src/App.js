@@ -9,6 +9,7 @@ import MealForm from "./components/MealForm"
 import MealDisplay from "./components/MealDisplay"
 import Meals from "./components/Meals"
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer"
 import Homepage from "./components/Homepage"
 import Splash from "./components/Splash"
 import ProtectedRoute from "./components/auth/ProtectedRoute";
@@ -40,26 +41,32 @@ function App() {
         <ProtectedRoute path="/ingredients/create" exact={true}>
           <NavBar />
           <IngredientForm />
+          <Footer />
         </ProtectedRoute>
         <ProtectedRoute path="/ingredients" exact={true}>
           <NavBar />
           <AllIngredients />
+          <Footer />
         </ProtectedRoute>
         <ProtectedRoute path="/meals/create" exact={true}>
           <NavBar />
           <MealForm />
+          <Footer />
         </ProtectedRoute>
         <ProtectedRoute path="/meals" exact={true}>
           <NavBar />
           <Meals />
+          <Footer />
         </ProtectedRoute>
         <ProtectedRoute path="/meals/:mealId" exact={true}>
           <NavBar />
           <MealDisplay />
+          <Footer />
         </ProtectedRoute>
         <ProtectedRoute path="/meals/:mealId/edit" exact={true}>
           <NavBar />
           <EditMealForm />
+          <Footer />
         </ProtectedRoute>
         {/* <Route path="/login" exact={true}>
           <LoginForm />
@@ -69,10 +76,12 @@ function App() {
         </Route> */}
         <Route path="/" exact={true}>
           <Splash />
+          <Footer />
         </Route>
         <ProtectedRoute path="/homepage" exact={true}>
           <NavBar />
           <Homepage />
+          <Footer />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
