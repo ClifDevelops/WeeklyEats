@@ -23,12 +23,35 @@ def seed_meals():
     3. Place under the preheated broiler and cook until center is light pink and edges are golden brown, 10 to 15 minutes.
     4. Remove fillets from the oven and immediately plate. Squeeze remaining lemon half over top and sprinkle with remaining kosher salt. Serve with lemon slices. 
     ''')
+    meal5 = Meal(name='Chicken Tacos', cuisine='Mexican', recipe='''1. Mix water and taco seasoning in a large bowl. Add tomato sauce, vinegar, garlic, oregano, cumin, and sugar; mix well.
+    2. Heat oil in a large skillet over medium-high heat. Add chicken and cook until golden brown, about 5 minutes per side. Add tomato sauce mixture and bring to a boil. Reduce heat to medium-low, cover, and simmer until chicken is no longer pink in the center and the juices run clear, about 20 minutes. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C).
+    3. Remove chicken breasts from the pan and shred meat with 2 forks when cool enough to handle. Return shredded chicken to the pan with the tomato sauce. Cook and stir until chicken is coated with sauce and sauce reduces a bit, about 5 minutes.
+    4. Transfer chicken and sauce to a serving bowl and spoon onto taco shells.
+    ''')
+    meal6 = Meal(name='Roast Chicken with Potatoes', cuisine='French',
+                 recipe='''1. Preheat oven to 400 degrees F (200 degrees C). Blend butter with ginger, lemon zest, cumin, garlic, salt, and pepper until well combined; set aside.
+    2. Prepare the potatoes, either boiled and mashed or cut into a large dice and roasted with herbs and spices.
+    3. Melt 3 tablespoons butter mixture; toss with potatoes, carrots, parsnips, and green onions. Scatter around chicken.
+    4. Carefully loosen skin over breast meat, legs, and thighs using fingertips. Spread remaining butter mixture evenly under and over skin of chicken.
+    5. Roast, basting occasionally, for 60 to 75 minutes (or until an instant-read thermometer registers 165 degrees F/74 degrees C in thigh and breast meat).
+    6. Cover and rest for 10 minutes. Carve chicken into portions and serve with vegetables.
+    ''')
+    meal7 = Meal(name='Flank Steak Tacos', cuisine='Mexican',
+                 recipe='''1. Combine onion, cilantro, lime juice, soy sauce, olive oil, brown sugar, oregano, red pepper flakes, and garlic in a large bowl.
+    2. Place steak in a baking pan and pour marinade on top. Cover and refrigerate at least 1 to 4 hours.
+    3. Grill steak 2 to 4 minutes per side, to desired doneness. Allow meat to rest 5 to 10 minutes before slicing against the grain into 1/4-inch slices.
+    4. Add meat to tortillas and top with your favorite toppings.
+    ''')
+    
 
 
     db.session.add(meal1)
     db.session.add(meal2)
     db.session.add(meal3)
     db.session.add(meal4)
+    db.session.add(meal5)
+    db.session.add(meal6)
+    db.session.add(meal7)
 
     db.session.commit()
 
@@ -42,11 +65,17 @@ def seed_user_meals():
     user_meal2 = UserMeal(user_id=1, meal_id=2)
     user_meal3 = UserMeal(user_id=1, meal_id=3)
     user_meal4 = UserMeal(user_id=1, meal_id=4)
+    user_meal5 = UserMeal(user_id=1, meal_id=5)
+    user_meal6 = UserMeal(user_id=1, meal_id=6)
+    user_meal7 = UserMeal(user_id=1, meal_id=7)
 
     db.session.add(user_meal1)
     db.session.add(user_meal2)
     db.session.add(user_meal3)
     db.session.add(user_meal4)
+    db.session.add(user_meal5)
+    db.session.add(user_meal6)
+    db.session.add(user_meal7)
 
     db.session.commit()
 

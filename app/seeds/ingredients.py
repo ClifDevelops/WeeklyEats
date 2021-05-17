@@ -303,6 +303,27 @@ def seed_ingredients():
         name='tomato sauce', type='pantry staple')
     ingredient145 = Ingredient(
         name='tomato paste', type='pantry staple')
+    ingredient146 = Ingredient(
+        name='taco seasoning', type='spice')
+    ingredient147 = Ingredient(
+        name='taco shells', type='grain')
+    ingredient148 = Ingredient(
+        name='tortillas', type='grain')
+    ingredient149 = Ingredient(
+        name='parsnips', type='vegetable')
+    ingredient150 = Ingredient(
+        name='green onion', type='vegetable')
+    ingredient151 = Ingredient(
+        name='ginger', type='vegetable')
+    ingredient152 = Ingredient(
+        name='brown sugar', type='pantry staple')
+    ingredient153 = Ingredient(
+        name='soy sauce', type='pantry staple')
+    ingredient154 = Ingredient(
+        name='cilantro', type='herb')
+    ingredient155 = Ingredient(
+        name='flank steak', type='protein')
+    
     
 
     
@@ -451,6 +472,16 @@ def seed_ingredients():
     db.session.add(ingredient143)
     db.session.add(ingredient144)
     db.session.add(ingredient145)
+    db.session.add(ingredient146)
+    db.session.add(ingredient147)
+    db.session.add(ingredient148)
+    db.session.add(ingredient149)
+    db.session.add(ingredient150)
+    db.session.add(ingredient151)
+    db.session.add(ingredient152)
+    db.session.add(ingredient153)
+    db.session.add(ingredient154)
+    db.session.add(ingredient155)
 
     db.session.commit()
 
@@ -507,6 +538,49 @@ def seed_meal_ingredients():
     meal_ingredient42 = MealIngredient(meal_id=1, ingredient_id=144)
     meal_ingredient43 = MealIngredient(meal_id=1, ingredient_id=145)
 
+    meal_ingredient44 = MealIngredient(meal_id=5, ingredient_id=14)
+    meal_ingredient45 = MealIngredient(meal_id=5, ingredient_id=29)
+    meal_ingredient46 = MealIngredient(meal_id=5, ingredient_id=30)
+    meal_ingredient47 = MealIngredient(meal_id=5, ingredient_id=56)
+    meal_ingredient48 = MealIngredient(meal_id=5, ingredient_id=62)
+    meal_ingredient49 = MealIngredient(meal_id=5, ingredient_id=72)
+    meal_ingredient50 = MealIngredient(meal_id=5, ingredient_id=75)
+    meal_ingredient51 = MealIngredient(meal_id=5, ingredient_id=78)
+    meal_ingredient52 = MealIngredient(meal_id=5, ingredient_id=82)
+    meal_ingredient53 = MealIngredient(meal_id=5, ingredient_id=143)
+    meal_ingredient54 = MealIngredient(meal_id=5, ingredient_id=144)
+    meal_ingredient55 = MealIngredient(meal_id=5, ingredient_id=146)
+    meal_ingredient56 = MealIngredient(meal_id=5, ingredient_id=147)
+
+    meal_ingredient57 = MealIngredient(meal_id=6, ingredient_id=42)
+    meal_ingredient58 = MealIngredient(meal_id=6, ingredient_id=67)
+    meal_ingredient59 = MealIngredient(meal_id=6, ingredient_id=70)
+    meal_ingredient60 = MealIngredient(meal_id=6, ingredient_id=103)
+    meal_ingredient61 = MealIngredient(meal_id=6, ingredient_id=125)
+    meal_ingredient62 = MealIngredient(meal_id=6, ingredient_id=117)
+    meal_ingredient63 = MealIngredient(meal_id=6, ingredient_id=118)
+    meal_ingredient64 = MealIngredient(meal_id=6, ingredient_id=13)
+    meal_ingredient65 = MealIngredient(meal_id=6, ingredient_id=149)
+    meal_ingredient66 = MealIngredient(meal_id=6, ingredient_id=150)
+    meal_ingredient67 = MealIngredient(meal_id=6, ingredient_id=151)
+    
+    meal_ingredient68 = MealIngredient(meal_id=7, ingredient_id=155)
+    meal_ingredient69 = MealIngredient(meal_id=7, ingredient_id=154)
+    meal_ingredient70 = MealIngredient(meal_id=7, ingredient_id=153)
+    meal_ingredient71 = MealIngredient(meal_id=7, ingredient_id=152)
+    meal_ingredient72 = MealIngredient(meal_id=7, ingredient_id=150)
+    meal_ingredient73 = MealIngredient(meal_id=7, ingredient_id=148)
+    meal_ingredient74 = MealIngredient(meal_id=7, ingredient_id=143)
+    meal_ingredient75 = MealIngredient(meal_id=7, ingredient_id=137)
+    meal_ingredient76 = MealIngredient(meal_id=7, ingredient_id=122)
+    meal_ingredient77 = MealIngredient(meal_id=7, ingredient_id=118)
+    meal_ingredient78 = MealIngredient(meal_id=7, ingredient_id=117)
+    meal_ingredient79 = MealIngredient(meal_id=7, ingredient_id=78)
+    meal_ingredient80 = MealIngredient(meal_id=7, ingredient_id=82)
+    meal_ingredient81 = MealIngredient(meal_id=7, ingredient_id=77)
+    meal_ingredient82 = MealIngredient(meal_id=7, ingredient_id=29)
+    meal_ingredient83 = MealIngredient(meal_id=7, ingredient_id=14)
+
     
     
     db.session.add(meal_ingredient1)
@@ -552,6 +626,47 @@ def seed_meal_ingredients():
     db.session.add(meal_ingredient41)
     db.session.add(meal_ingredient42)
     db.session.add(meal_ingredient43)
+    db.session.add(meal_ingredient44)
+    db.session.add(meal_ingredient45)
+    db.session.add(meal_ingredient46)
+    db.session.add(meal_ingredient47)
+    db.session.add(meal_ingredient48)
+    db.session.add(meal_ingredient49)
+    db.session.add(meal_ingredient50)
+    db.session.add(meal_ingredient51)
+    db.session.add(meal_ingredient52)
+    db.session.add(meal_ingredient53)
+    db.session.add(meal_ingredient54)
+    db.session.add(meal_ingredient55)
+    db.session.add(meal_ingredient56)
+    db.session.add(meal_ingredient57)
+    db.session.add(meal_ingredient58)
+    db.session.add(meal_ingredient59)
+    db.session.add(meal_ingredient60)
+    db.session.add(meal_ingredient61)
+    db.session.add(meal_ingredient62)
+    db.session.add(meal_ingredient63)
+    db.session.add(meal_ingredient64)
+    db.session.add(meal_ingredient65)
+    db.session.add(meal_ingredient66)
+    db.session.add(meal_ingredient67)
+    db.session.add(meal_ingredient68)
+    db.session.add(meal_ingredient69)
+    db.session.add(meal_ingredient70)
+    db.session.add(meal_ingredient71)
+    db.session.add(meal_ingredient72)
+    db.session.add(meal_ingredient73)
+    db.session.add(meal_ingredient74)
+    db.session.add(meal_ingredient75)
+    db.session.add(meal_ingredient76)
+    db.session.add(meal_ingredient77)
+    db.session.add(meal_ingredient78)
+    db.session.add(meal_ingredient79)
+    db.session.add(meal_ingredient80)
+    db.session.add(meal_ingredient81)
+    db.session.add(meal_ingredient82)
+    db.session.add(meal_ingredient83)
+    
 
 
 
