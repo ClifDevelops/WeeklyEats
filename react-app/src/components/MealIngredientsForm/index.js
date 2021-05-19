@@ -50,7 +50,7 @@ const MealIngredientsForm = ({mealId}) => {
        };
        await dispatch(addToMealIngredients(mealIngredient));
        await dispatch(getAllMeals());
-       setIngredient_id(1);
+       setIngredient_id("");
       //  history.push(`/meals/${mealId}`)
       //  setIngredient_quantity(1);
       //  setMeasurement_unit("each");
@@ -79,6 +79,7 @@ const MealIngredientsForm = ({mealId}) => {
                 required
                 className="meal-ingredient-form-input"
               >
+                <option isDisabled={true} value={null}>Select an ingredient</option>
                 {Object.values(ingredients)
                   .filter((ingredient) => {
                     if (searchTerm === "") {
