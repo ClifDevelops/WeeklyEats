@@ -19,7 +19,7 @@ const removeMeals = () => ({
 export const getAllMeals = () => async (dispatch) => {
   const response = await fetch("/api/meals/");
   let response2 = await response.json();
-  // console.log(response2)
+  
   dispatch(getMeals(response2));
 };
 
@@ -33,7 +33,7 @@ export const addToMeals = (meal) => async (dispatch) => {
     })
     let response2 = await response.json()
     dispatch (setMeal(response2))
-    // console.log(response2)
+    
 }
 export const editMeal = (meal) => async (dispatch) => {
   const response = await fetch("/api/meals/edit", {
@@ -45,7 +45,7 @@ export const editMeal = (meal) => async (dispatch) => {
   });
   let response2 = await response.json();
   dispatch(setMeal(response2));
-  // console.log(response2)
+  
 };
 
 export const logoutMeals = () => async (dispatch) => {
@@ -60,7 +60,19 @@ export const addToMealIngredients = (mealIngredient) => async (dispatch) => {
     },
     body: JSON.stringify(mealIngredient),
   });
-  console.log('MI POST RETURNED', response)
+  
+}
+
+export const deleteMealIngredient = (meal, mealIngredient) => async (dispatch) => {
+
+  const response = await fetch("/api/meals/ingredient", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({'mealId': meal, 'ingredientId': mealIngredient}),
+  });
+  
 }
 
 const initialState = {}
@@ -68,17 +80,15 @@ export default function meal(state = initialState, action) {
     switch (action.type) {
       case SET_MEAL:
         state[action.meal.id] = action.meal
-          // state.meals.push(action.meal)
+          
         return { ...state };
       case GET_MEALS:
         const allMeals = {}
-        // console.log(action.meals.meals)
+        
         action.meals.meals.forEach(meal => {
           allMeals[meal.id] = meal
         })
-        // for (meal in allMeals){
-        //   meals.push(meal)
-        // }
+       
         return {...allMeals};
       case REMOVE_MEALS:
         return {}

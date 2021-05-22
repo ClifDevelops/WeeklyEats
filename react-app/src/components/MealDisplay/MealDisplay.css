@@ -60,3 +60,26 @@
     padding: 30px;
     background-color: rgba(255, 251, 223, 0.7);
 }
+.meal-display-individual-ingredient {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    border-bottom: 1px dotted black;
+}
+
+.meal-individual-ingredient-remove-button {
+    background-color: #fac3c1 !important;
+    height: 20px;
+    width: 60px;
+    border-radius: 2px;
+    font-size: 13px;
+    text-align: center;
+    border: none;
+    box-shadow: 2px 2px 1px 0px black;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+.meal-individual-ingredient-remove-button:hover {
+    box-shadow: 2px 2px 2px 1px black;
+}

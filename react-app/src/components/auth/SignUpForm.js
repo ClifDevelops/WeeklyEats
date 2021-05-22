@@ -11,11 +11,17 @@ const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, email, password));
+      
+      if (data) {
+        await setErrors(data);
+        
+      }
     }
   };
 
@@ -40,7 +46,12 @@ const SignUpForm = () => {
   }
 
   return (
-    <form className='auth-form' onSubmit={onSignUp}>
+    <form className="auth-form" onSubmit={onSignUp}>
+      <div>
+        {errors.map((error) => (
+          <div key={error}>{error}</div>
+        ))}
+      </div>
       <div>
         <input
           type="text"
@@ -82,7 +93,9 @@ const SignUpForm = () => {
           className="auth-form-input"
         ></input>
       </div>
-      <button type="submit" className='auth-form-button'>Sign Up</button>
+      <button type="submit" className="auth-form-button">
+        Sign Up
+      </button>
     </form>
   );
 };

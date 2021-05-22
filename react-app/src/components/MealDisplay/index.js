@@ -1,10 +1,8 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useParams, useHistory, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllMeals } from "../../store/meal";
-import { deleteFromGroceryList, addToGroceryList } from "../../store/grocerylist";
-import { getAllIngredients } from "../../store/ingredient";
+import { getAllMeals, deleteMealIngredient } from "../../store/meal";
 import MealIngredientsForm from "../MealIngredientsForm";
 import './MealDisplay.css'
 import IngredientForm from "../IngredientForm";
@@ -14,18 +12,20 @@ const MealDisplay = () => {
     const history = useHistory();
     const { mealId } = useParams();
     const meal = useSelector(state => state?.meal[mealId])
-    const ingredients = useSelector((state) => state?.ingredient?.ingredients);
-    // console.log('HERE IT IS', meal?.meal_ingredients.forEach(ingredient => ingredient.ingredient['name']))
-    // console.log("THE NEXT ONE", meal?.meal_ingredients[0].ingredient.name);
+    // const ingredients = useSelector((state) => state?.ingredient?.ingredients);
+    
 
-     useEffect(() => {
-       dispatch(getAllMeals());
-     }, []);
+    useEffect(() => {
+      dispatch(getAllMeals());
+    }, []);
 
-    // useEffect(() => {
-    //     dispatch(getAllIngredients())
-    // }, [])
-
+  const deleteMI = async (mealId, ingredientId) => {
+    console.log('HERE IT IS!!!!!!!!!!', mealId, ingredientId)
+    await dispatch(deleteMealIngredient(mealId, ingredientId))
+    await dispatch(getAllMeals());
+  }
+    ;
+    
     if (!meal){
         history.push('/meals')
     }
@@ -43,10 +43,15 @@ const MealDisplay = () => {
           </div>
           <div className='meal-display-ingredients-container'>
             <div>INGREDIENTS</div>
-            {/* <div>{meal?.meal_ingredients[0].ingredient.name}</div> */}
+            
             <div>{meal?.meal_ingredients.map((ingredient) => {
                 return (
+                  <div className='meal-display-individual-ingredient'>
                     <div>{ingredient.ingredient.name}</div>
+                    <div>
+                      <button className='meal-individual-ingredient-remove-button' onClick={() => deleteMI(mealId, ingredient?.ingredient_id)}>remove</button>
+                    </div>
+                  </div>
                 )})}</div>
             <MealIngredientsForm mealId={mealId} />
             <IngredientForm />

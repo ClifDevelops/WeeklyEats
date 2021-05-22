@@ -70,8 +70,11 @@ export const signUp = (username, email, password) => async (dispatch)=> {
             email,
             password,
         }),
-    });
+    }); 
     const data = await response.json();
+    if (data.errors) {
+        return data.errors
+    }
     dispatch(setUser(data));
 }
 
@@ -79,7 +82,6 @@ export const signUp = (username, email, password) => async (dispatch)=> {
 
 const initialState = { user: null };
 
-// useSelector(state => state.session.user)
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {

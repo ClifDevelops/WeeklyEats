@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Redirect } from "react-router-dom";
-import ingredient, { getAllIngredients } from "../../store/ingredient";
+
+import { getAllIngredients } from "../../store/ingredient";
 import {
   addIngredientToGroceryList,
   removeIngredientFromGroceryList,
@@ -12,40 +12,20 @@ import GroceryList from "../GroceryList";
 
 const AllIngredients = () => {
     const dispatch = useDispatch()
-    // const [loaded, setLoaded] = useState(false)
-    // console.log(ingredients)
+    
     useEffect(() => {
         dispatch(getAllIngredients());
     }, [])
 
     const ingredients = useSelector(state => state?.ingredient)
     const GL = useSelector(state => state?.groceryList)
-    console.log(GL)
+   
     const [searchTerm, setSearchTerm] = useState("");
     
     useEffect(() => { 
     }, [Object.values(ingredients).length]);
     
-    // useEffect(() => {
-    //     (async () => {
-    //       const ingredients = await dispatch(getAllIngredients());
-    //       if (ingredients) {
-    //         setLoaded(true);
-    //       } else {
-    //         return <Redirect to="/homepage" />;
-    //       }
-    //     })();  
-    // }, [dispatch]);
-    // useEffect(() => {
-    //   (async () => {
-    //     const thisEvent = await dispatch(getOneEvent(Number(id)));
-    //     if (thisEvent) {
-    //       setLoaded(true);
-    //     } else {
-    //       return <Redirect to="/" />;
-    //     }
-    //   })();
-    // }, [dispatch]);
+    
 
     const addToGroceryList = (ingredient) => {
       dispatch(addIngredientToGroceryList(ingredient))

@@ -8,11 +8,7 @@ const NavBar = () => {
   return (
     <nav>
       <div className="nav-container">
-        {/* <div>
-          <NavLink to="/" exact={true} className="navbar-link">
-            Home
-          </NavLink>
-        </div> */}
+        
         <div>
           <NavLink to="/homepage" exact={true} className="navbar-link">
             <img className="navbar-logo-home" src={Logo} />
@@ -33,15 +29,6 @@ const NavBar = () => {
             Ingredients
           </NavLink>
         </div>
-        {/* <div>
-          <NavLink
-            to="/ingredients/create"
-            exact={true}
-            className="navbar-link"
-          >
-            Add an Ingredient
-          </NavLink>
-        </div> */}
 
         <div>
           <LogoutButton />

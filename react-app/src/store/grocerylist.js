@@ -2,6 +2,7 @@ const SET_GL_INGREDIENT = "ingredient/SET_GL_INGREDIENT";
 const UNSET_GL_INGREDIENT = "ingredient/UNSET_GL_INGREDIENT";
 const REMOVE_GL_INGREDIENT = "ingredient/REMOVE_GL_INGREDIENT";
 const SET_MEAL_GL_INGREDIENT = "ingredient/SET_MEAL_GL_INGREDIENT";
+const UNSET_MEAL_GL_INGREDIENT = "ingredient/UNSET_MEAL_GL_INGREDIENT";
 
 const setGLIngredient = (ingredient) => ({
   type: SET_GL_INGREDIENT,
@@ -22,6 +23,11 @@ const setMealGLIngredient = (mealIngredients) => ({
   mealIngredients
 });
 
+const unsetMealGLIngredient = (mealIngredients) => ({
+  type: UNSET_MEAL_GL_INGREDIENT,
+  mealIngredients,
+});
+
 export const addIngredientToGroceryList = (ingredient) => async (dispatch) => {
   dispatch(setGLIngredient(ingredient))
 }
@@ -38,6 +44,10 @@ export const addMealIngredientsToGroceryList = (mealIngredients) => async (dispa
   dispatch(setMealGLIngredient(mealIngredients));
 }
 
+export const removeMealIngredientsFromGroceryList = (mealIngredients) => async (dispatch) => {
+    dispatch(unsetMealGLIngredient(mealIngredients));
+  };
+
 const initialState = {}
 export default function groceryList(state = initialState, action) {
     switch (action.type) {
@@ -50,14 +60,13 @@ export default function groceryList(state = initialState, action) {
       case REMOVE_GL_INGREDIENT:
         return {};
       case SET_MEAL_GL_INGREDIENT:
-        console.log("HERE ARE THE MEAL INGREDIENTS", action.mealIngredients);
-        console.log(
-          "HERE IS THE INGREDIENT NAME",
-          action.mealIngredients[0].ingredient.name
-        );
-        console.log(state);
         action.mealIngredients.forEach((ingredient) => {
           state[ingredient.ingredient.id] = ingredient.ingredient;
+        });
+        return { ...state };
+      case UNSET_MEAL_GL_INGREDIENT:
+        action.mealIngredients.forEach((ingredient) => {
+          delete state[ingredient.ingredient.id]
         });
         return { ...state };
       default:

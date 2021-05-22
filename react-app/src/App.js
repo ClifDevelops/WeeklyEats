@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch} from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import LoginForm from "./components/auth/LoginForm";
-import SignUpForm from "./components/auth/SignUpForm";
+
 import IngredientForm from "./components/IngredientForm"
 import AllIngredients from "./components/AllIngredients"
 import MealForm from "./components/MealForm"
@@ -13,12 +12,12 @@ import Footer from "./components/Footer"
 import Homepage from "./components/Homepage"
 import Splash from "./components/Splash"
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-// import { authenticate } from "./services/auth";
+
 import { authenticate } from "./store/session";
 import EditMealForm from "./components/EditMealForm";
 
 function App() {
-  // const [authenticated, setAuthenticated] = useState(false);
+  
   const dispatch = useDispatch()
   const [loaded, setLoaded] = useState(false);
 
@@ -35,7 +34,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <NavBar /> */}
 
       <Switch>
         <ProtectedRoute path="/ingredients/create" exact={true}>
@@ -68,12 +66,6 @@ function App() {
           <EditMealForm />
           <Footer />
         </ProtectedRoute>
-        {/* <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route> */}
         <Route path="/" exact={true}>
           <Splash />
           <Footer />

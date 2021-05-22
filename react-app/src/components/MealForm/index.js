@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { addToMeals } from "../../store/meal";
 import "./MealForm.css";
 

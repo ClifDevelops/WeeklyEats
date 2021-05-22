@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import { addToIngredients } from "../../store/ingredient"
-import AllIngredients from "../AllIngredients";
+
 import './IngredientForm.css'
 
 const IngredientForm = () => {
@@ -73,7 +73,7 @@ const IngredientForm = () => {
           </div>
           <button type="submit" className='ingredient-form-button'>Enter Ingredient</button>
         </form>
-        {/* <AllIngredients /> */}
+        
       </div>
     );
 

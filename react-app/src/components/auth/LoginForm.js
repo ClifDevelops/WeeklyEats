@@ -19,14 +19,9 @@ const LoginForm = () => {
     }
   };
 
-  const demoLogin = async () => {
-    setEmail('Clif@Clif.com')
-    setPassword('Clif')
-    const data = await dispatch(login(email, password));
-    if (data.errors) {
-      setErrors(data.errors);
-    }
-
+  const demoLogin = async (e) => {
+    e.preventDefault();
+    return await dispatch(login("Clif@Clif.com", "Clif"));
   }
 
   const updateEmail = (e) => {
@@ -46,7 +41,7 @@ const LoginForm = () => {
     <form  onSubmit={onLogin}>
       <div>
         {errors.map((error) => (
-          <div>{error}</div>
+          <div key={error}>{error}</div>
         ))}
       </div>
       <div>

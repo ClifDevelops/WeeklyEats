@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import LoginForm from '../auth/LoginForm'
 import SignUpForm from '../auth/SignUpForm'
 import "./Splash.css";

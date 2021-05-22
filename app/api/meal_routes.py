@@ -88,3 +88,22 @@ def addToMealIngredients():
     db.session.add(meal_ingredient)
     db.session.commit()
     return meal_ingredient.to_dict()
+
+
+@meal_routes.route('/ingredient', methods=['DELETE'])
+@login_required
+def deleteFromMealIngredients():
+   
+    meal_id = request.json['mealId']
+    print('---------------', meal_id)
+    
+    ingredient_id = request.json['ingredientId']
+    print('---------------', ingredient_id)
+
+    meal_ingredient = MealIngredient.query.filter(
+        MealIngredient.meal_id == meal_id, MealIngredient.ingredient_id == ingredient_id).first()
+
+    print('------------', meal_ingredient)
+    db.session.delete(meal_ingredient)
+    db.session.commit()
+    return {}
