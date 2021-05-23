@@ -12,6 +12,8 @@ const GroceryList = () => {
         <div className='grocery-list-container'>
             <div className='grocery-list-title'>GROCERY LIST</div>
             {Object.values(list).map((item) => {
+             
+              if (Array.isArray(item)) return;
                 return (
                   <div className='gl-individual-item-container' key={item.id}>
                     <div className='gl-individual-item-name'>{item.name}</div>

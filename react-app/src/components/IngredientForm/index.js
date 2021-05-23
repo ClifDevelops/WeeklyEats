@@ -8,7 +8,7 @@ import './IngredientForm.css'
 const IngredientForm = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    const [type, setType] = useState('dairy');
+    const [type, setType] = useState('');
     
 
 
@@ -32,7 +32,7 @@ const IngredientForm = () => {
        
         await dispatch(addToIngredients(ingredient))
         setName("");
-        setType("dairy");
+        setType("");
         
     }
 
@@ -51,6 +51,7 @@ const IngredientForm = () => {
               value={name}
               placeholder="Ingredient Name"
               className="ingredient-form-input"
+              required
             ></input>
           </div>
           <div>
@@ -59,7 +60,11 @@ const IngredientForm = () => {
               onChange={updateType}
               value={type}
               className="ingredient-form-input"
+              required
             >
+              <option isdisabled={true} value={null}>
+                Select ingredient type
+              </option>
               <option value="dairy">dairy</option>
               <option value="fat">fat</option>
               <option value="fruit">fruit</option>
@@ -71,9 +76,10 @@ const IngredientForm = () => {
               <option value="pantry staple">pantry staple</option>
             </select>
           </div>
-          <button type="submit" className='ingredient-form-button'>Enter Ingredient</button>
+          <button type="submit" className="ingredient-form-button">
+            Enter Ingredient
+          </button>
         </form>
-        
       </div>
     );
 

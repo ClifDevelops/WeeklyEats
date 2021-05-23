@@ -12,7 +12,6 @@ const MealDisplay = () => {
     const history = useHistory();
     const { mealId } = useParams();
     const meal = useSelector(state => state?.meal[mealId])
-    // const ingredients = useSelector((state) => state?.ingredient?.ingredients);
     
 
     useEffect(() => {
@@ -20,7 +19,7 @@ const MealDisplay = () => {
     }, []);
 
   const deleteMI = async (mealId, ingredientId) => {
-    console.log('HERE IT IS!!!!!!!!!!', mealId, ingredientId)
+    
     await dispatch(deleteMealIngredient(mealId, ingredientId))
     await dispatch(getAllMeals());
   }

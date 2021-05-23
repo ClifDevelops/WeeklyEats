@@ -18,14 +18,14 @@ const removeGLIngredient = () => ({
   type: REMOVE_GL_INGREDIENT
 });
 
-const setMealGLIngredient = (mealIngredients) => ({
+const setMealGLIngredient = (meal) => ({
   type: SET_MEAL_GL_INGREDIENT,
-  mealIngredients
+  meal
 });
 
-const unsetMealGLIngredient = (mealIngredients) => ({
+const unsetMealGLIngredient = (meal) => ({
   type: UNSET_MEAL_GL_INGREDIENT,
-  mealIngredients,
+  meal,
 });
 
 export const addIngredientToGroceryList = (ingredient) => async (dispatch) => {
@@ -40,15 +40,15 @@ export const logoutGL = () => async (dispatch) => {
   dispatch(removeGLIngredient());
 };
 
-export const addMealIngredientsToGroceryList = (mealIngredients) => async (dispatch) => {
-  dispatch(setMealGLIngredient(mealIngredients));
+export const addMealIngredientsToGroceryList = (meal) => async (dispatch) => {
+  dispatch(setMealGLIngredient(meal));
 }
 
-export const removeMealIngredientsFromGroceryList = (mealIngredients) => async (dispatch) => {
-    dispatch(unsetMealGLIngredient(mealIngredients));
+export const removeMealIngredientsFromGroceryList = (meal) => async (dispatch) => {
+    dispatch(unsetMealGLIngredient(meal));
   };
 
-const initialState = {}
+const initialState = {mealsInGL: []}
 export default function groceryList(state = initialState, action) {
     switch (action.type) {
       case SET_GL_INGREDIENT:
@@ -58,16 +58,22 @@ export default function groceryList(state = initialState, action) {
         delete state[action.ingredient.id] 
         return { ...state };
       case REMOVE_GL_INGREDIENT:
-        return {};
+        state = {}
+        state.mealsInGL = []
+        return state;
       case SET_MEAL_GL_INGREDIENT:
-        action.mealIngredients.forEach((ingredient) => {
+        console.log('HERE I AM', state.mealsInGL)
+        action.meal.meal_ingredients.forEach((ingredient) => {
           state[ingredient.ingredient.id] = ingredient.ingredient;
         });
+        // let mealsInGL = []
+        state.mealsInGL.push(action.meal.id)
         return { ...state };
       case UNSET_MEAL_GL_INGREDIENT:
-        action.mealIngredients.forEach((ingredient) => {
-          delete state[ingredient.ingredient.id]
+        action.meal.meal_ingredients.forEach((ingredient) => {
+          delete state[ingredient.ingredient.id];
         });
+        state.mealsInGL.pop(action.meal.id);
         return { ...state };
       default:
         return state;

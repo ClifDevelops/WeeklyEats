@@ -55,7 +55,7 @@ const MealIngredientsForm = ({mealId}) => {
                 required
                 className="meal-ingredient-form-input"
               >
-                <option isDisabled={true} value={null}>Select an ingredient</option>
+                <option isdisabled={true} value={null}>Select an ingredient</option>
                 {Object.values(ingredients)
                   .filter((ingredient) => {
                     if (searchTerm === "") {
