@@ -74,6 +74,7 @@ class Ingredient(db.Model):
         "id": self.id,
         "name": self.name,
         "type": self.type,
+        "meals": [meal_ingredient.meal_id for meal_ingredient in self.meal_ingredients]
     }
 
 

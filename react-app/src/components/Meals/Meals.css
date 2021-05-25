@@ -101,8 +101,8 @@
 
 .meals-search-input {
     width: 400px;
-    height: 40px;
-    font-size: 20px;
+    /* height: 60px; */
+    font-size: 25px;
     text-align: center;
     box-sizing: border-box;
     margin: 15px;

@@ -7,7 +7,7 @@ import "./MealForm.css";
 const MealForm = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    const [cuisine, setCuisine] = useState('American');
+    const [cuisine, setCuisine] = useState('');
     const [recipe, setRecipe] = useState('');
     const history = useHistory()
 
@@ -32,7 +32,7 @@ const MealForm = () => {
         };
         dispatch(addToMeals(meal));
         setName('');
-        setCuisine('American');
+        setCuisine('');
         setRecipe('');
         history.push('/meals')
         
@@ -49,12 +49,20 @@ const MealForm = () => {
               onChange={updateName}
               value={name}
               placeholder="Meal Name"
-              className='meal-form-input'
+              className="meal-form-input"
               required
             ></input>
           </div>
           <div className="meal-form-div">
-            <select className='meal-form-select' name="cuisine" onChange={updateCuisine} value={cuisine}>
+            <select
+              className="meal-form-select"
+              name="cuisine"
+              onChange={updateCuisine}
+              value={cuisine}
+            >
+              <option isdisabled="true" value={null}>
+                Select cuisine
+              </option>
               <option value="American">American</option>
               <option value="British">British</option>
               <option value="Cajun">Cajun</option>

@@ -62,7 +62,7 @@ const IngredientForm = () => {
               className="ingredient-form-input"
               required
             >
-              <option isdisabled={true} value={null}>
+              <option isdisabled='true' value={null}>
                 Select ingredient type
               </option>
               <option value="dairy">dairy</option>

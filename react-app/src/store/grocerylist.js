@@ -62,7 +62,7 @@ export default function groceryList(state = initialState, action) {
         state.mealsInGL = []
         return state;
       case SET_MEAL_GL_INGREDIENT:
-        console.log('HERE I AM', state.mealsInGL)
+        // console.log('HERE I AM', state.mealsInGL)
         action.meal.meal_ingredients.forEach((ingredient) => {
           state[ingredient.ingredient.id] = ingredient.ingredient;
           // if (state[ingredient.ingredient.id]){
@@ -72,13 +72,24 @@ export default function groceryList(state = initialState, action) {
         state.mealsInGL.push(action.meal.id)
         return { ...state };
       case UNSET_MEAL_GL_INGREDIENT:
-        action.meal.meal_ingredients.forEach((ingredient) => {
-          delete state[ingredient.ingredient.id];
-        });
         const index = state.mealsInGL.indexOf(action.meal.id)
         if (index > -1) {
           state.mealsInGL.splice(index, 1);
         }
+        action.meal.meal_ingredients.forEach((ingredient) => {
+         
+          if (ingredient.ingredient.meals) {
+            let isItTRUE = false;
+            ingredient.ingredient.meals.forEach((mealId) => {
+            
+            if (state.mealsInGL.includes(mealId)) {
+              isItTRUE = true;
+            }})
+            
+          if (!isItTRUE) delete state[ingredient.ingredient.id];
+          }
+          else delete state[ingredient.ingredient.id];
+        });
         return { ...state };
       default:
         return state;
