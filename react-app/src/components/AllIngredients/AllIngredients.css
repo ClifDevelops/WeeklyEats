@@ -34,7 +34,7 @@
     border-radius: 2px;
 }
 .ingredient-individual-container:hover {
-    border: 2.2px solid black;
+    border: 2.2px solid #6aabc5;
 }
 
 .ingredient-button {
