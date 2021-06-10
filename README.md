@@ -2,7 +2,7 @@
 
 This is an application intended to assist in the process of planning meals and a shopping list for groceries each week.
 
-
+- Deployed to Heroku: [WeeklyEats](weeklyeats.herokuapp.com)
 ## MVPs and how to use WeeklyEats
 
 
