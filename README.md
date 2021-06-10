@@ -47,6 +47,6 @@ This is an application intended to assist in the process of planning meals and a
    flask run
    ```
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+6. To run the React App in development, checkout the [README](./frontend/README.md) inside the `frontend` directory.
 
 
