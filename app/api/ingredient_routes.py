@@ -15,12 +15,13 @@ def addToIngredients():
         ingredient = Ingredient(
             name=form.data['name'],
             type=form.data['type'],
+            editable=True,
         )
         db.session.add(ingredient)
         db.session.commit()
         # print(ingredient)
         return ingredient.to_dict()
-    return
+    return {}
 
 
 @ingredient_routes.route('/', methods=['GET'])
@@ -30,3 +31,14 @@ def getIngredients():
     ingredientsObj = [ingredient.to_dict() for ingredient in ingredientsArray]
     # print(ingredientsObj)
     return {'ingredients': ingredientsObj}
+
+
+@ingredient_routes.route('/', methods=['DELETE'])
+@login_required
+def deleteIngredient():
+    print('here is the shit you lookin for', request.json)
+    ingredient_id = request.json['id']
+    ingredient = Ingredient.query.filter(Ingredient.id == ingredient_id).first()
+    db.session.delete(ingredient)
+    db.session.commit()
+    return {}

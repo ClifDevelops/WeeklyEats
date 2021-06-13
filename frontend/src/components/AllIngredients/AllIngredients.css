@@ -9,8 +9,8 @@
     /* height: 700px; */
     grid-column: 2;
     box-sizing: border-box;
-    margin-top: 15px;
-    margin-bottom: 10vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     display: flex;
     flex-wrap: wrap;
     /* flex-direction: column;
@@ -20,11 +20,12 @@
 }
 
 .ingredient-individual-container {
-    display:flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 170px 130px;
+    /* flex-wrap: wrap; */
     border: 1px solid rgb(122, 100, 0);
-    justify-content: space-between;
-    align-items: center;
+    /* justify-content: space-between;
+    align-items: center; */
     box-sizing: border-box;
     margin: 5px;
     padding: 5px;
@@ -36,13 +37,31 @@
 .ingredient-individual-container:hover {
     border: 2.2px solid #6aabc5;
 }
+.ingredients-info-container {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+}
+.ingredient-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+.ingredient-type {
+    font-size: 14px;
+}
 
+.ingredients-buttons-container {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+
+}
 .ingredient-button {
     background-color: #f8fbc5 !important;
     height: 45px;
-    width: 70px;
-    border-radius: 20px;
-    font-size: 12px;
+    width: 50px;
+    border-radius: 10px;
+    font-size: 10px;
     text-align: center;
     border: none;
     box-shadow: 2px 2px 1px 0px rgb(158, 125, 53);
@@ -54,8 +73,8 @@
 .removeGL-ingredient-button {
     background-color: #461310ec !important;
     height: 45px;
-    width: 70px;
-    border-radius: 20px;
+    width: 50px;
+    border-radius: 10px;
     font-size: 10px;
     text-align: center;
     color: whitesmoke;
@@ -65,7 +84,22 @@
 .removeGL-ingredient-button:hover {
     box-shadow: 2px 2px 2px 1px rgb(158, 125, 53);
 }
-
+.ingredient-delete-button {
+    background-color: #461310ec !important;
+    height: 45px;
+    width: 50px;
+    border-radius: 10px;
+    font-size: 10px;
+    text-align: center;
+    color: whitesmoke;
+    border: none;
+    box-shadow: 2px 2px 1px 0px rgb(158, 125, 53);
+    box-sizing: border-box;
+    margin-left: 5px;
+}
+.ingredient-delete-button:hover {
+    box-shadow: 2px 2px 2px 1px rgb(158, 125, 53);
+}
 .ingredients-search-input {
     width: 400px;
     height: 40px;

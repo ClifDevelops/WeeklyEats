@@ -1,6 +1,7 @@
 const SET_INGREDIENT = 'ingredient/SET_INGREDIENT'
 const GET_INGREDIENTS = 'ingredients/GET_INGREDIENTS'
 const REMOVE_INGREDIENTS = "ingredients/REMOVE_INGREDIENTS";
+const DELETE_INGREDIENT = 'ingredients/DELETE_INGREDIENT'
 
 const setIngredient = (ingredient) => ({
     type: SET_INGREDIENT,
@@ -15,6 +16,23 @@ const getIngredients = (ingredients) => ({
 const removeIngredients = () => ({
     type: REMOVE_INGREDIENTS
 })
+
+const deleteIngredient = (ingredient) => ({
+    type: DELETE_INGREDIENT,
+    ingredient
+})
+
+export const deleteFromIngredients = (ingredient) => async (dispatch) => {
+    const response = await fetch("/api/ingredients/", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(ingredient),
+    });
+    let response2 = await response.json()
+    dispatch(deleteIngredient(ingredient))
+}
 
 export const getAllIngredients = () => async (dispatch) => {
     const response = await fetch('/api/ingredients/')
@@ -59,6 +77,10 @@ export default function ingredient(state = initialState, action) {
             return state;
         case REMOVE_INGREDIENTS:
             return {}
+        case DELETE_INGREDIENT:
+            console.log('here is that shit', action.ingredient.id)
+            delete state[action.ingredient.id]
+            return {...state}
         default:
             return state;
     }
