@@ -21,7 +21,7 @@
 .navbar-link:hover {
     /* font-size: 26px; */
     text-decoration: underline;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 .navbar-logo-home {

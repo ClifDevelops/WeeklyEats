@@ -24,6 +24,7 @@ const IngredientForm = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+        name.toLowerCase();
         const ingredient = {
             name,
             type,

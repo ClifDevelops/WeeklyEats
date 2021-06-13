@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getAllIngredients } from "../../store/ingredient";
+import { getAllIngredients, deleteFromIngredients } from "../../store/ingredient";
 import {
   addIngredientToGroceryList,
   removeIngredientFromGroceryList,
@@ -9,6 +9,7 @@ import {
 import "./AllIngredients.css";
 import IngredientForm from "../IngredientForm";
 import GroceryList from "../GroceryList";
+import { deleteMealIngredient } from "../../store/meal";
 
 const AllIngredients = () => {
     const dispatch = useDispatch()
@@ -30,6 +31,11 @@ const AllIngredients = () => {
     const addToGroceryList = (ingredient) => {
       dispatch(addIngredientToGroceryList(ingredient))
 
+    }
+
+    const deleteIngredientFromDB = async (ingredient) => {
+      await dispatch(deleteFromIngredients(ingredient))
+      // await dispatch(getAllIngredients());
     }
 
     const removeFromGL = (ingredient) => {
@@ -69,23 +75,30 @@ const AllIngredients = () => {
                   key={ingredient.id}
                   className="ingredient-individual-container"
                 >
-                  <div>{ingredient.name}</div>
-                  <div>{ingredient.type}</div>
+                  <div className='ingredients-info-container'>
+                    <div className='ingredient-name'>{ingredient.name}</div>
+                    <div className='ingredient-type'>{ingredient.type}</div>
+                  </div>
+                  <div className='ingredients-buttons-container'>
+                    {!GL[ingredient.id] ?
+                    <button
+                      className="ingredient-button"
+                      onClick={() => addToGroceryList(ingredient)}
+                    >
+                      Add to Grocery List
+                    </button> :
+                    <button
+                      className="removeGL-ingredient-button"
+                      onClick={() => removeFromGL(ingredient)}
+                    >
+                      Remove from Grocery List
+                    </button> }
 
-                  {!GL[ingredient.id] ?
-                  <button
-                    className="ingredient-button"
-                    onClick={() => addToGroceryList(ingredient)}
-                  >
-                    Add to Grocery List
-                  </button> :
-                  <button
-                    className="removeGL-ingredient-button"
-                    onClick={() => removeFromGL(ingredient)}
-                  >
-                    Remove from Grocery List
-                  </button> }
-
+                    {ingredient.editable ?
+                    <button className="ingredient-delete-button" onClick={() => deleteIngredientFromDB(ingredient)}>Delete</button> :
+                    ""
+                    }
+                  </div>
                 </div>
               );
             })}

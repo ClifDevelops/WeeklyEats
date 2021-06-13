@@ -66,6 +66,7 @@ class Ingredient(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(100), nullable=False, unique=True)
   type = db.Column(db.String(50), nullable=False)
+  editable = db.Column(db.Boolean, nullable=False)
 
   meal_ingredients = db.relationship("MealIngredient", back_populates="ingredient")
   
@@ -74,6 +75,7 @@ class Ingredient(db.Model):
         "id": self.id,
         "name": self.name,
         "type": self.type,
+        "editable": self.editable,
         "meals": [meal_ingredient.meal_id for meal_ingredient in self.meal_ingredients]
     }
 

@@ -5,8 +5,8 @@
     overflow-y: scroll;
     height: 84vh;
     box-sizing: border-box;
-    padding: 8px;
-    margin-bottom: 10vh;
+    padding: 4px;
+    margin-bottom: 1vh;
 }
 
 .meal-individual-card {

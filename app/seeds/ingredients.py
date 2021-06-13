@@ -2,327 +2,327 @@ from app.models import db, Ingredient, MealIngredient
 
 def seed_ingredients():
     ingredient1 = Ingredient(
-        name='apples', type='fruit')
+        name='apples', type='fruit', editable=False)
     ingredient2 = Ingredient(
-        name='oranges', type='fruit')
+        name='oranges', type='fruit', editable=False)
     ingredient3 = Ingredient(
-        name='bananas', type='fruit')
+        name='bananas', type='fruit', editable=False)
     ingredient4 = Ingredient(
-        name='blueberries', type='fruit')
+        name='blueberries', type='fruit', editable=False)
     ingredient5 = Ingredient(
-        name='raspberries', type='fruit')
+        name='raspberries', type='fruit', editable=False)
     ingredient6 = Ingredient(
-        name='coconuts', type='fruit')
+        name='coconuts', type='fruit', editable=False)
     ingredient7 = Ingredient(
-        name='cantaloupes', type='fruit')
+        name='cantaloupes', type='fruit', editable=False)
     ingredient8 = Ingredient(
-        name='cherries', type='fruit')
+        name='cherries', type='fruit', editable=False)
     ingredient9 = Ingredient(
-        name='blackberries', type='fruit')
+        name='blackberries', type='fruit', editable=False)
     ingredient10 = Ingredient(
-        name='kiwis', type='fruit')
+        name='kiwis', type='fruit', editable=False)
     ingredient11 = Ingredient(
-        name='plums', type='fruit')
+        name='plums', type='fruit', editable=False)
     ingredient12 = Ingredient(
-        name='grapes', type='fruit')
+        name='grapes', type='fruit', editable=False)
     ingredient13 = Ingredient(
-        name='lemons', type='fruit')
+        name='lemons', type='fruit', editable=False)
     ingredient14 = Ingredient(
-        name='limes', type='fruit')
+        name='limes', type='fruit', editable=False)
     ingredient15 = Ingredient(
-        name='grapefruits', type='fruit')
+        name='grapefruits', type='fruit', editable=False)
     ingredient16 = Ingredient(
-        name='mangoes', type='fruit')
+        name='mangoes', type='fruit', editable=False)
     ingredient17 = Ingredient(
-        name='peaches', type='fruit')
+        name='peaches', type='fruit', editable=False)
     ingredient18 = Ingredient(
-        name='tangerines', type='fruit')
+        name='tangerines', type='fruit', editable=False)
     ingredient19 = Ingredient(
-        name='pears', type='fruit')
+        name='pears', type='fruit', editable=False)
     ingredient20 = Ingredient(
-        name='pineapple', type='fruit')
+        name='pineapple', type='fruit', editable=False)
     ingredient21 = Ingredient(
-        name='pomegranate', type='fruit')
+        name='pomegranate', type='fruit', editable=False)
     ingredient22 = Ingredient(
-        name='strawberries', type='fruit')
+        name='strawberries', type='fruit', editable=False)
     ingredient23 = Ingredient(
-        name='watermelon', type='fruit')
+        name='watermelon', type='fruit', editable=False)
 
 
     ingredient24 = Ingredient(
-        name='eggs', type='dairy')
+        name='eggs', type='dairy', editable=False)
     ingredient25 = Ingredient(
-        name='whole milk', type='dairy')
+        name='whole milk', type='dairy', editable=False)
     ingredient26 = Ingredient(
-        name='oat milk', type='dairy')
+        name='oat milk', type='dairy', editable=False)
     ingredient27 = Ingredient(
-        name='almond milk', type='dairy')
+        name='almond milk', type='dairy', editable=False)
     ingredient28 = Ingredient(
-        name='yogurt', type='dairy')
+        name='yogurt', type='dairy', editable=False)
     ingredient29 = Ingredient(
-        name='sour cream', type='dairy')
+        name='sour cream', type='dairy', editable=False)
     ingredient30 = Ingredient(
-        name='cheese', type='dairy')
+        name='cheese', type='dairy', editable=False)
     ingredient31 = Ingredient(
-        name='provolone', type='dairy')
+        name='provolone', type='dairy', editable=False)
     ingredient32 = Ingredient(
-        name='cheddar', type='dairy')
+        name='cheddar', type='dairy', editable=False)
     ingredient33 = Ingredient(
-        name='parmesan', type='dairy')
+        name='parmesan', type='dairy', editable=False)
     ingredient34 = Ingredient(
-        name='cream cheese', type='dairy')
+        name='cream cheese', type='dairy', editable=False)
     ingredient35 = Ingredient(
-        name='brie cheese', type='dairy')
+        name='brie cheese', type='dairy', editable=False)
     ingredient36 = Ingredient(
-        name='bleu cheese', type='dairy')
+        name='bleu cheese', type='dairy', editable=False)
     ingredient37 = Ingredient(
-        name='heavy cream', type='dairy')
+        name='heavy cream', type='dairy', editable=False)
     ingredient38 = Ingredient(
-        name='half and half', type='dairy')
+        name='half and half', type='dairy', editable=False)
     ingredient39 = Ingredient(
-        name='whipping cream', type='dairy')
+        name='whipping cream', type='dairy', editable=False)
     ingredient40 = Ingredient(
-        name='ice cream', type='dairy')
+        name='ice cream', type='dairy', editable=False)
     
 
     ingredient41 = Ingredient(
-        name='steak', type='protein')
+        name='steak', type='protein', editable=False)
     ingredient42 = Ingredient(
-        name='chicken', type='protein')
+        name='chicken', type='protein', editable=False)
     ingredient43 = Ingredient(
-        name='salmon', type='protein')
+        name='salmon', type='protein', editable=False)
     ingredient44 = Ingredient(
-        name='ground beef', type='protein')
+        name='ground beef', type='protein', editable=False)
     ingredient45 = Ingredient(
-        name='pork belly', type='protein')
+        name='pork belly', type='protein', editable=False)
     ingredient46 = Ingredient(
-        name='pork loin', type='protein')
+        name='pork loin', type='protein', editable=False)
     ingredient47 = Ingredient(
-        name='sausage', type='protein')
+        name='sausage', type='protein', editable=False)
     ingredient48 = Ingredient(
-        name='sausage (ground)', type='protein')
+        name='sausage (ground)', type='protein', editable=False)
     ingredient49 = Ingredient(
-        name='pepperoni', type='protein')
+        name='pepperoni', type='protein', editable=False)
     ingredient50 = Ingredient(
-        name='ham', type='protein')
+        name='ham', type='protein', editable=False)
     ingredient51 = Ingredient(
-        name='ham (deli)', type='protein')
+        name='ham (deli)', type='protein', editable=False)
     ingredient52 = Ingredient(
-        name='bacon', type='protein')
+        name='bacon', type='protein', editable=False)
     ingredient53 = Ingredient(
-        name='turkey', type='protein')
+        name='turkey', type='protein', editable=False)
     ingredient54 = Ingredient(
-        name='turkey (deli)', type='protein')
+        name='turkey (deli)', type='protein', editable=False)
     ingredient55 = Ingredient(
-        name='chicken tenders', type='protein')
+        name='chicken tenders', type='protein', editable=False)
     ingredient56 = Ingredient(
-        name='chicken breasts', type='protein')
+        name='chicken breasts', type='protein', editable=False)
     ingredient57 = Ingredient(
-        name='chicken thighs', type='protein')
+        name='chicken thighs', type='protein', editable=False)
     ingredient58 = Ingredient(
-        name='chicken wings', type='protein')
+        name='chicken wings', type='protein', editable=False)
     
     ingredient59 = Ingredient(
-        name='asparagus', type='vegetable')
+        name='asparagus', type='vegetable', editable=False)
     ingredient60 = Ingredient(
-        name='beets', type='vegetable')
+        name='beets', type='vegetable', editable=False)
     ingredient61 = Ingredient(
-        name='broccoli', type='vegetable')
+        name='broccoli', type='vegetable', editable=False)
     ingredient62 = Ingredient(
-        name='tomatoes', type='vegetable')
+        name='tomatoes', type='vegetable', editable=False)
     ingredient63 = Ingredient(
-        name='cucumbers', type='vegetable')
+        name='cucumbers', type='vegetable', editable=False)
     ingredient64 = Ingredient(
-        name='green beans', type='vegetable')
+        name='green beans', type='vegetable', editable=False)
     ingredient65 = Ingredient(
-        name='brussel sprouts', type='vegetable')
+        name='brussel sprouts', type='vegetable', editable=False)
     ingredient66 = Ingredient(
-        name='cabbage', type='vegetable')
+        name='cabbage', type='vegetable', editable=False)
     ingredient67 = Ingredient(
-        name='potatoes', type='vegetable')
+        name='potatoes', type='vegetable', editable=False)
     ingredient68 = Ingredient(
-        name='radishes', type='vegetable')
+        name='radishes', type='vegetable', editable=False)
     ingredient69 = Ingredient(
-        name='sweet potatoes', type='vegetable')
+        name='sweet potatoes', type='vegetable', editable=False)
     ingredient70 = Ingredient(
-        name='carrots', type='vegetable')
+        name='carrots', type='vegetable', editable=False)
     ingredient71 = Ingredient(
-        name='corn', type='vegetable')
+        name='corn', type='vegetable', editable=False)
     ingredient72 = Ingredient(
-        name='lettuce', type='vegetable')
+        name='lettuce', type='vegetable', editable=False)
     ingredient73 = Ingredient(
-        name='spinach', type='vegetable')
+        name='spinach', type='vegetable', editable=False)
     ingredient74 = Ingredient(
-        name='mushrooms', type='vegetable')
+        name='mushrooms', type='vegetable', editable=False)
     ingredient75 = Ingredient(
-        name='onions', type='vegetable')
+        name='onions', type='vegetable', editable=False)
     ingredient76 = Ingredient(
-        name='shallots', type='vegetable')
+        name='shallots', type='vegetable', editable=False)
     ingredient77 = Ingredient(
-        name='bell peppers', type='vegetable')
+        name='bell peppers', type='vegetable', editable=False)
     ingredient78 = Ingredient(
-        name='jalapenos', type='vegetable')
+        name='jalapenos', type='vegetable', editable=False)
     ingredient79 = Ingredient(
-        name='squash', type='vegetable')
+        name='squash', type='vegetable', editable=False)
     ingredient80 = Ingredient(
-        name='butternut squash', type='vegetable')
+        name='butternut squash', type='vegetable', editable=False)
     ingredient81 = Ingredient(
-        name='zucchini', type='vegetable')
+        name='zucchini', type='vegetable', editable=False)
     ingredient82 = Ingredient(
-        name='avocado', type='vegetable')
+        name='avocado', type='vegetable', editable=False)
     ingredient83 = Ingredient(
-        name='fresno peppers', type='vegetable')
+        name='fresno peppers', type='vegetable', editable=False)
     ingredient84 = Ingredient(
-        name='serrano peppers', type='vegetable')
+        name='serrano peppers', type='vegetable', editable=False)
 
 
     ingredient85 = Ingredient(
-        name='pasta', type='grain')
+        name='pasta', type='grain', editable=False)
     ingredient86 = Ingredient(
-        name='rigatoni', type='grain')
+        name='rigatoni', type='grain', editable=False)
     ingredient87 = Ingredient(
-        name='spaghetti noodles', type='grain')
+        name='spaghetti noodles', type='grain', editable=False)
     ingredient88 = Ingredient(
-        name='rice', type='grain')
+        name='rice', type='grain', editable=False)
     ingredient89 = Ingredient(
-        name='white rice', type='grain')
+        name='white rice', type='grain', editable=False)
     ingredient90 = Ingredient(
-        name='brown rice', type='grain')
+        name='brown rice', type='grain', editable=False)
     ingredient91 = Ingredient(
-        name='jasmine rice', type='grain')
+        name='jasmine rice', type='grain', editable=False)
     ingredient92 = Ingredient(
-        name='risotto', type='grain')
+        name='risotto', type='grain', editable=False)
     ingredient93 = Ingredient(
-        name='ferro', type='grain')
+        name='ferro', type='grain', editable=False)
     ingredient94 = Ingredient(
-        name='quinoa', type='grain')
+        name='quinoa', type='grain', editable=False)
 
     ingredient95 = Ingredient(
-        name='coffee', type='pantry staple')
+        name='coffee', type='pantry staple', editable=False)
     ingredient96 = Ingredient(
-        name='bread', type='pantry staple')
+        name='bread', type='pantry staple', editable=False)
     ingredient97 = Ingredient(
-        name='flour', type='pantry staple')
+        name='flour', type='pantry staple', editable=False)
     ingredient98 = Ingredient(
-        name='sugar', type='pantry staple')
+        name='sugar', type='pantry staple', editable=False)
     ingredient99 = Ingredient(
-        name='baking soda', type='pantry staple')
+        name='baking soda', type='pantry staple', editable=False)
     ingredient100 = Ingredient(
-        name='baking powder', type='pantry staple')
+        name='baking powder', type='pantry staple', editable=False)
     ingredient101 = Ingredient(
-        name='chicken broth', type='pantry staple')
+        name='chicken broth', type='pantry staple', editable=False)
     ingredient102 = Ingredient(
-        name='beef broth', type='pantry staple')
+        name='beef broth', type='pantry staple', editable=False)
 
     ingredient103 = Ingredient(
-        name='butter', type='fat')
+        name='butter', type='fat', editable=False)
     ingredient104 = Ingredient(
-        name='olive oil', type='fat')
+        name='olive oil', type='fat', editable=False)
     ingredient105 = Ingredient(
-        name='vegetable oil', type='fat')
+        name='vegetable oil', type='fat', editable=False)
     ingredient106 = Ingredient(
-        name='avocado oil', type='fat')
+        name='avocado oil', type='fat', editable=False)
     ingredient107 = Ingredient(
-        name='coconut oil', type='fat')
+        name='coconut oil', type='fat', editable=False)
     ingredient108 = Ingredient(
-        name='peanut oil', type='fat')
+        name='peanut oil', type='fat', editable=False)
     ingredient109 = Ingredient(
-        name='sesame oil', type='fat')
+        name='sesame oil', type='fat', editable=False)
     ingredient110 = Ingredient(
-        name='peanut', type='fat')
+        name='peanut', type='fat', editable=False)
     ingredient111 = Ingredient(
-        name='walnut', type='fat')
+        name='walnut', type='fat', editable=False)
     ingredient112 = Ingredient(
-        name='almond', type='fat')
+        name='almond', type='fat', editable=False)
     ingredient113 = Ingredient(
-        name='cashew', type='fat')
+        name='cashew', type='fat', editable=False)
     ingredient114 = Ingredient(
-        name='brazil nut', type='fat')
+        name='brazil nut', type='fat', editable=False)
     ingredient115 = Ingredient(
-        name='pistachio', type='fat')
+        name='pistachio', type='fat', editable=False)
     ingredient116 = Ingredient(
-        name='pecan', type='fat')
+        name='pecan', type='fat', editable=False)
 
     ingredient117 = Ingredient(
-        name='salt', type='spice')
+        name='salt', type='spice', editable=False)
     ingredient118 = Ingredient(
-        name='pepper', type='spice')
+        name='pepper', type='spice', editable=False)
     ingredient119 = Ingredient(
-        name='cayenne pepper', type='spice')
+        name='cayenne pepper', type='spice', editable=False)
     ingredient120 = Ingredient(
-        name='cinnamon', type='spice')
+        name='cinnamon', type='spice', editable=False)
     ingredient121 = Ingredient(
-        name='cloves', type='spice')
+        name='cloves', type='spice', editable=False)
     ingredient122 = Ingredient(
-        name='crushed red pepper', type='spice')
+        name='crushed red pepper', type='spice', editable=False)
     ingredient123 = Ingredient(
-        name='dried oregano', type='spice')
+        name='dried oregano', type='spice', editable=False)
     ingredient124 = Ingredient(
-        name='dried thyme', type='spice')
+        name='dried thyme', type='spice', editable=False)
     ingredient125 = Ingredient(
-        name='cumin', type='spice')
+        name='cumin', type='spice', editable=False)
     ingredient126 = Ingredient(
-        name='curry powder', type='spice')
+        name='curry powder', type='spice', editable=False)
     ingredient127 = Ingredient(
-        name='garlic powder', type='spice')
+        name='garlic powder', type='spice', editable=False)
     ingredient128 = Ingredient(
-        name='ground ginger', type='spice')
+        name='ground ginger', type='spice', editable=False)
     ingredient129 = Ingredient(
-        name='dried rosemary', type='spice')
+        name='dried rosemary', type='spice', editable=False)
 
     ingredient130 = Ingredient(
-        name='mint', type='herb')
+        name='mint', type='herb', editable=False)
     ingredient131 = Ingredient(
-        name='coriander', type='herb')
+        name='coriander', type='herb', editable=False)
     ingredient132 = Ingredient(
-        name='basil', type='herb')
+        name='basil', type='herb', editable=False)
     ingredient133 = Ingredient(
-        name='parsley', type='herb')
+        name='parsley', type='herb', editable=False)
     ingredient134 = Ingredient(
-        name='chive', type='herb')
+        name='chive', type='herb', editable=False)
     ingredient135 = Ingredient(
-        name='dill', type='herb')
+        name='dill', type='herb', editable=False)
     ingredient136 = Ingredient(
-        name='thyme', type='herb')
+        name='thyme', type='herb', editable=False)
     ingredient137 = Ingredient(
-        name='oregano', type='herb')
+        name='oregano', type='herb', editable=False)
     ingredient138 = Ingredient(
-        name='rosemary', type='herb')
+        name='rosemary', type='herb', editable=False)
     ingredient139 = Ingredient(
-        name='sage', type='herb')
+        name='sage', type='herb', editable=False)
     ingredient140 = Ingredient(
-        name='tarragon', type='herb')
+        name='tarragon', type='herb', editable=False)
     ingredient141 = Ingredient(
-        name='bay leaf', type='herb')
+        name='bay leaf', type='herb', editable=False)
 
     ingredient142 = Ingredient(
-        name='burger buns', type='grain')
+        name='burger buns', type='grain', editable=False)
     ingredient143 = Ingredient(
-        name='garlic', type='vegetable')
+        name='garlic', type='vegetable', editable=False)
     ingredient144 = Ingredient(
-        name='tomato sauce', type='pantry staple')
+        name='tomato sauce', type='pantry staple', editable=False)
     ingredient145 = Ingredient(
-        name='tomato paste', type='pantry staple')
+        name='tomato paste', type='pantry staple', editable=False)
     ingredient146 = Ingredient(
-        name='taco seasoning', type='spice')
+        name='taco seasoning', type='spice', editable=False)
     ingredient147 = Ingredient(
-        name='taco shells', type='grain')
+        name='taco shells', type='grain', editable=False)
     ingredient148 = Ingredient(
-        name='tortillas', type='grain')
+        name='tortillas', type='grain', editable=False)
     ingredient149 = Ingredient(
-        name='parsnips', type='vegetable')
+        name='parsnips', type='vegetable', editable=False)
     ingredient150 = Ingredient(
-        name='green onion', type='vegetable')
+        name='green onion', type='vegetable', editable=False)
     ingredient151 = Ingredient(
-        name='ginger', type='vegetable')
+        name='ginger', type='vegetable', editable=False)
     ingredient152 = Ingredient(
-        name='brown sugar', type='pantry staple')
+        name='brown sugar', type='pantry staple', editable=False)
     ingredient153 = Ingredient(
-        name='soy sauce', type='pantry staple')
+        name='soy sauce', type='pantry staple', editable=False)
     ingredient154 = Ingredient(
-        name='cilantro', type='herb')
+        name='cilantro', type='herb', editable=False)
     ingredient155 = Ingredient(
-        name='flank steak', type='protein')
+        name='flank steak', type='protein', editable=False)
     
     
 
