@@ -3,20 +3,28 @@
     background-size: cover;
     box-sizing: border-box;
     margin-bottom: 10vh;
-    height: 970px;
+    height: 81vh;
     display: grid;
     grid-template-columns: 1fr 800px 1fr;
-    grid-template-rows: 270px 400px 300px;
+    grid-template-rows: 25vh 30vh 25vh;
 }
 
-.splash-forms-container {
+.splash-forms-links-container {
     grid-column: 2;
     grid-row: 3;
+    font-size: 2vh;
+    text-align: center;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     margin-top: 20px;
     
+}
+.splash-forms-links-container > div {
+    box-sizing: border-box;
+    margin-top: 10px;
 }
 
 .splash-banner-1 {
@@ -29,11 +37,41 @@
 }
 
 .splash-title {
-    font-size: 150px;
+    font-size: 16.5vh;
     grid-column: 2;
     grid-row: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 
+}
+
+.demo-user-button {
+    background-color: #c1d5e0 !important;
+    height: 4vh;
+    width: fit-content;
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family: inherit;
+    text-align: center;
+    border: none;
+    box-shadow: 2px 2px 1px 0px rgb(179, 136, 81);
+    box-sizing: border-box;
+    /* margin-top: 30px; */
+    /* margin-left: 26px; */
+    /* padding: 5px; */
+}
+.demo-user-button:hover {
+    box-shadow: 2px 2px 2px 1px rgb(179, 136, 81);
+}
+
+.splash-links {
+    color: #6aabc5;
+    text-decoration: none;
+}
+.splash-links:visited {
+    color: #6aabc5;
+}
+.splash-links:hover {
+    text-decoration: underline;
 }
