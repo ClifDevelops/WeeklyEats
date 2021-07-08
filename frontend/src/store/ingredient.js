@@ -51,6 +51,9 @@ export const addToIngredients = (ingredient) => async (dispatch) => {
       body: JSON.stringify(ingredient)
     })
     let response2 = await response.json()
+    if (response2.errors) {
+        return response2
+    }
     dispatch(setIngredient(response2))
     
 }

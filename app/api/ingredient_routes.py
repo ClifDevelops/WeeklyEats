@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, session, request
 from app.models import Ingredient, db
 from flask_login import login_required
 from app.forms import IngredientForm
+from app.api import validation_errors_to_error_messages
 
 ingredient_routes = Blueprint('ingredients', __name__)
 
@@ -21,7 +22,7 @@ def addToIngredients():
         db.session.commit()
         # print(ingredient)
         return ingredient.to_dict()
-    return {}
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 @ingredient_routes.route('/', methods=['GET'])

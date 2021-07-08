@@ -9,11 +9,12 @@ const IngredientForm = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [type, setType] = useState('');
+    const [errors, setErrors] = useState([]);
     
 
 
     const updateName = (e) => {
-        setName(e.target.value)
+        setName(e.target.value.toLowerCase())
     };
 
     const updateType = (e) => {
@@ -24,14 +25,17 @@ const IngredientForm = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        name.toLowerCase();
+        // name.toLowerCase();
         const ingredient = {
             name,
             type,
             
         }
        
-        await dispatch(addToIngredients(ingredient))
+        const data = await dispatch(addToIngredients(ingredient))
+        if (data.errors) {
+          setErrors(data.errors);
+        }
         setName("");
         setType("");
         
@@ -44,6 +48,11 @@ const IngredientForm = () => {
           Don't see what you're looking for? Add a new ingredient here.
         </div>
         <form onSubmit={onSubmit}>
+        <div>
+          {errors.map((error) => (
+            <div key={error}>{error}</div>
+          ))}
+        </div>
           <div>
             <input
               type="text"
