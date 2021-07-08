@@ -14,4 +14,4 @@ def ingredient_exists(form, field):
 class IngredientForm(FlaskForm):
     name = StringField('name', validators=[DataRequired(), ingredient_exists])
     type = StringField('type', validators=[DataRequired()])
-    # measurementUnit = StringField('measurementUnit', validators=[DataRequired()])
+    
