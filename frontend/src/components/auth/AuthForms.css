@@ -1,16 +1,25 @@
+.auth-page {
+    height: 91vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .auth-form {
     display:flex;
     flex-direction: column;
+    border: 2px solid #6aabc5;
+    box-sizing: border-box;
+    padding: 15px;
 }
 
 .auth-form-input {
-    font-size: 18px;
+    font-size: 3vh;
     font-family: inherit;
     box-sizing: border-box;
     margin-top: 6px;
     border-radius: 6px;
     border: 1px solid black;
-    height: 30px;
+    height: 4.5vh;
 }
 .auth-form-input:focus {
     outline: 0;
@@ -19,38 +28,31 @@
 
 .auth-form-button {
     background-color: #f8fbc5 !important;
-    height: 40px;
-    width: 140px;
+    height: 4.5vh;
+    width: 9vw;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 2.5vh;
     font-family: inherit;
     text-align: center;
     border: none;
     box-shadow: 2px 2px 1px 0px rgb(179, 136, 81);
     box-sizing: border-box;
     margin-top: 8px;
-    margin-left: 36px;
+    margin-left: 5.5vw;
 }
 .auth-form-button:hover {
     box-shadow: 2px 2px 2px 1px rgb(179, 136, 81);
 }
 
-
-.demo-user-button {
-    background-color: #c1d5e0 !important;
-    height: 60px;
-    width: 164px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-family: inherit;
-    text-align: center;
-    border: none;
-    box-shadow: 2px 2px 1px 0px rgb(179, 136, 81);
+.auth-form-cancel-link {
+    color: #6aabc5;
+    text-decoration: none;
     box-sizing: border-box;
-    margin-top: 30px;
-    margin-left: 26px;
-    padding: 5px;
+    margin-left: 10px;
 }
-.demo-user-button:hover {
-    box-shadow: 2px 2px 2px 1px rgb(179, 136, 81);
+.auth-form-cancel-link:visited {
+    color: #6aabc5;
+}
+.auth-form-cancel-link:hover {
+    text-decoration: underline;
 }

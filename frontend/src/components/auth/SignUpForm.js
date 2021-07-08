@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './AuthForms.css'
 
@@ -46,57 +46,62 @@ const SignUpForm = () => {
   }
 
   return (
-    <form className="auth-form" onSubmit={onSignUp}>
-      <div>
-        {errors.map((error) => (
-          <div key={error}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <input
-          type="text"
-          name="username"
-          onChange={updateUsername}
-          value={username}
-          placeholder="Username"
-          className="auth-form-input"
-        ></input>
-      </div>
-      <div>
-        <input
-          type="text"
-          name="email"
-          onChange={updateEmail}
-          value={email}
-          placeholder="Email"
-          className="auth-form-input"
-        ></input>
-      </div>
-      <div>
-        <input
-          type="password"
-          name="password"
-          onChange={updatePassword}
-          value={password}
-          placeholder="Password"
-          className="auth-form-input"
-        ></input>
-      </div>
-      <div>
-        <input
-          type="password"
-          name="repeat_password"
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
-          placeholder="Confirm Password"
-          className="auth-form-input"
-        ></input>
-      </div>
-      <button type="submit" className="auth-form-button">
-        Sign Up
-      </button>
-    </form>
+    <div className='auth-page'>
+      <form className="auth-form" onSubmit={onSignUp}>
+        <div>
+          {errors.map((error) => (
+            <div key={error}>{error}</div>
+          ))}
+        </div>
+        <div>
+          <input
+            type="text"
+            name="username"
+            onChange={updateUsername}
+            value={username}
+            placeholder="Username"
+            className="auth-form-input"
+          ></input>
+        </div>
+        <div>
+          <input
+            type="text"
+            name="email"
+            onChange={updateEmail}
+            value={email}
+            placeholder="Email"
+            className="auth-form-input"
+          ></input>
+        </div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            onChange={updatePassword}
+            value={password}
+            placeholder="Password"
+            className="auth-form-input"
+          ></input>
+        </div>
+        <div>
+          <input
+            type="password"
+            name="repeat_password"
+            onChange={updateRepeatPassword}
+            value={repeatPassword}
+            required={true}
+            placeholder="Confirm Password"
+            className="auth-form-input"
+          ></input>
+        </div>
+        <div>
+          <button type="submit" className="auth-form-button">
+            Sign Up
+          </button>
+          <NavLink to='/' className='auth-form-cancel-link'>Cancel</NavLink>
+        </div>
+      </form>
+    </div>
   );
 };
 
